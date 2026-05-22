@@ -1705,7 +1705,13 @@
     .couple-card .photo-frame { width: 250px; height: 335px; border-width: 8px; }
     .events-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .gallery-grid { columns: 3; column-gap: 0.5rem; }
-    .gallery-grid .img { margin-bottom: 0.5rem; }
+    .gallery-grid .img {
+      margin-bottom: 0.5rem;
+      /* Tắt animation + will-change để giảm GPU memory pressure trên mobile */
+      animation: none !important;
+      will-change: auto !important;
+    }
+    .gallery-grid .img:hover { transform: none; }
     .lightbox button { width: 44px; height: 44px; font-size: 1.4rem; }
     .lightbox .lb-close { top: 16px; right: 16px; }
     .lightbox .lb-prev  { left: 12px; }
