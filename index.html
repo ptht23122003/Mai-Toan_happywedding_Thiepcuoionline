@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Mai Em ❤ Tiến Toàn — Save the Date</title>
+<meta name="description" content="Thiệp mời cưới online — Mai Em & Tiến Toàn | 21.06.2026" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+  :root {
+    --cream: #fdf5f7;
+    --cream-deep: #f5dde4;
+    --blush: #e8c5c0;
+    --blush-deep: #d4a5a0;
+    --rose: #c08580;
+    --sage: #a8b5a0;
+    --gold: #c9a961;
+    --gold-light: #e2c98a;
+    --ink: #3a2e2a;
+    --ink-soft: #6b5852;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(58, 46, 42, 0.06);
+    --shadow-md: 0 8px 30px rgba(58, 46, 42, 0.08);
+    --shadow-lg: 0 20px 60px rgba(58, 46, 42, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Be Vietnam Pro', 'Cormorant Garamond', serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
+  .serif { font-family: 'Playfair Display', 'Cormorant Garamond', serif; }
+
+  /* ===== ENVELOPE OPENING ===== */
+  #envelope {
+    position: fixed; inset: 0; z-index: 9999;
+    background:
+      radial-gradient(ellipse at 18% 18%, rgba(232, 197, 192, 0.55), transparent 55%),
+      radial-gradient(ellipse at 82% 82%, rgba(212, 165, 160, 0.40), transparent 55%),
+      radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.08), transparent 60%),
+      radial-gradient(ellipse at center, transparent 0%, rgba(192, 133, 128, 0.10) 100%),
+      linear-gradient(135deg, #ffffff 0%, #fcf2f5 45%, #f5dde4 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 2rem;
+    transition: opacity 1s ease, transform 1.2s ease;
+    overflow: hidden;
+  }
+  /* Damask pattern overlay */
+  #envelope::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23c9a961' fill-opacity='0.5'%3E%3Cpath d='M60 20 Q50 35, 60 50 Q70 35, 60 20 Z M40 60 Q55 50, 70 60 Q55 70, 40 60 Z M60 70 Q50 85, 60 100 Q70 85, 60 70 Z M50 60 Q65 50, 80 60 Q65 70, 50 60 Z'/%3E%3Ccircle cx='60' cy='60' r='3'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='120' cy='120' r='2'/%3E%3Ccircle cx='0' cy='120' r='2'/%3E%3Ccircle cx='120' cy='0' r='2'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.28;
+    pointer-events: none;
+  }
+  /* Sparkles (small twinkling stars) */
+  .sparkle-layer { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+  .sparkle {
+    position: absolute;
+    width: 4px; height: 4px;
+    background: radial-gradient(circle, #b8923f 0%, rgba(184, 146, 63, 0.5) 40%, transparent 70%);
+    border-radius: 50%;
+    animation: twinkle ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(184, 146, 63, 0.55);
+  }
+  .sparkle.star {
+    width: 8px; height: 8px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .sparkle.star::before, .sparkle.star::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, transparent, #b8923f, transparent);
+  }
+  .sparkle.star::before { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+  .sparkle.star::after { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    50% { opacity: 1; transform: scale(1.4); }
+  }
+
+  /* Bokeh — large floating golden orbs */
+  .bokeh-layer { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+  .bokeh {
+    position: absolute; 
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(232, 197, 192, 0.50), rgba(201, 169, 97, 0.18) 50%, transparent 75%);
+    filter: blur(2px);
+    animation: floatUp linear infinite;
+    opacity: 0;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(110vh) translateX(0) scale(0.6); opacity: 0; }
+    10% { opacity: 0.85; }
+    50% { transform: translateY(50vh) translateX(30px) scale(1); }
+    90% { opacity: 0.85; }
+    100% { transform: translateY(-20vh) translateX(-30px) scale(0.8); opacity: 0; }
+  }
+
+  /* Glowing halo behind the envelope card */
+  .envelope-card-wrap {
+    position: relative;
+    z-index: 2;
+  }
+  .envelope-card-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -80px;
+    background: radial-gradient(ellipse at center, rgba(232, 197, 192, 0.45) 0%, rgba(201, 169, 97, 0.18) 30%, transparent 65%);
+    animation: haloPulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  @keyframes haloPulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
+
+  #envelope.opened { opacity: 0; pointer-events: none; transform: scale(1.15); }
+
+  /* Card entrance + gentle float */
+  .envelope-card {
+    animation: cardIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both, cardFloat 6s ease-in-out infinite 1.2s;
+  }
+  @keyframes cardIn {
+    0% { opacity: 0; transform: translateY(30px) scale(0.94); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes cardFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* Monogram shimmer */
+  .envelope-card .monogram {
+    background-size: 200% 100%;
+    animation: shimmer 4s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Pulsing dot in divider */
+  .divider-diamond .dot {
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 6px rgba(201, 169, 97, 0.6); }
+    50% { box-shadow: 0 0 16px rgba(201, 169, 97, 1); }
+  }
+
+  /* Button breathing glow + sparkles */
+  .open-btn {
+    animation: btnBreathe 2.4s ease-in-out infinite 1.5s;
+  }
+  @keyframes btnBreathe {
+    0%, 100% {
+      box-shadow: 0 10px 24px rgba(58, 46, 42, 0.35), 0 0 0 0 rgba(201, 169, 97, 0);
+    }
+    50% {
+      box-shadow: 0 10px 24px rgba(58, 46, 42, 0.35), 0 0 0 10px rgba(201, 169, 97, 0.18), 0 0 25px rgba(232, 210, 139, 0.5);
+    }
+  }
+  .open-btn .btn-text {
+    position: relative;
+    z-index: 2;
+    animation: btnTextBlink 1.4s ease-in-out infinite;
+  }
+  @keyframes btnTextBlink {
+    0%, 100% { text-shadow: 0 0 0 transparent; }
+    50% { text-shadow: 0 0 8px rgba(255, 235, 180, 0.85), 0 0 14px rgba(232, 210, 139, 0.5); }
+  }
+
+  /* Wrapper chứa button + ngón tay + 4 sparkle góc */
+  .open-btn-wrap {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Ngón tay 👉 chỉ ngang sang nút, nhấp nhảy phải */
+  .finger-pointer {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-right: 10px;
+    font-size: 38px;
+    line-height: 1;
+    transform: translateY(-50%);
+    animation: fingerPoint 0.85s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(58, 46, 42, 0.4));
+    pointer-events: none;
+    z-index: 5;
+  }
+  @keyframes fingerPoint {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50%      { transform: translateY(-50%) translateX(12px); }
+  }
+
+  /* Sparkles ở 4 góc của nút */
+  .btn-sparkle {
+    position: absolute;
+    width: 10px; height: 10px;
+    background: radial-gradient(circle, #fff5d6 0%, #ffeaa7 35%, rgba(255, 234, 167, 0.4) 65%, transparent 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: sparkleBlink 1.8s ease-in-out infinite;
+    box-shadow: 0 0 12px #ffeaa7, 0 0 4px #ffffff;
+    z-index: 6;
+  }
+  .btn-sparkle.tl { top: -5px; left: -5px;  animation-delay: 0s;    }
+  .btn-sparkle.tr { top: -5px; right: -5px; animation-delay: 0.45s; }
+  .btn-sparkle.bl { bottom: -5px; left: -5px;  animation-delay: 0.9s;  }
+  .btn-sparkle.br { bottom: -5px; right: -5px; animation-delay: 1.35s; }
+  @keyframes sparkleBlink {
+    0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+    40%, 60% { opacity: 1; transform: scale(1.5) rotate(180deg); }
+  }
+
+  .envelope-card {
+    position: relative;
+    background:
+      radial-gradient(ellipse at top, #fdfaf3 0%, #f5ecd9 100%);
+    padding: 4.5rem 2.5rem 3rem;
+    text-align: center;
+    max-width: 440px;
+    width: 90%;
+    box-shadow:
+      0 0 0 1px rgba(201, 169, 97, 0.6),
+      0 0 0 10px var(--cream),
+      0 0 0 11px rgba(201, 169, 97, 0.35),
+      0 40px 90px rgba(0, 0, 0, 0.55),
+      0 15px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  /* Inner ornamental border */
+  .envelope-card::before {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(201, 169, 97, 0.5);
+    pointer-events: none;
+  }
+  .envelope-card::after {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    pointer-events: none;
+  }
+
+  /* Corner SVG ornaments */
+  .corner-ornament {
+    position: absolute;
+    width: 64px; height: 64px;
+    color: var(--gold);
+    z-index: 3;
+  }
+  .corner-ornament.tl { top: 22px; left: 22px; }
+  .corner-ornament.tr { top: 22px; right: 22px; transform: scaleX(-1); }
+  .corner-ornament.bl { bottom: 22px; left: 22px; transform: scaleY(-1); }
+  .corner-ornament.br { bottom: 22px; right: 22px; transform: scale(-1, -1); }
+
+  /* Wreath wrapping the monogram */
+  .wreath-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 4rem;
+    margin-bottom: 0.5rem;
+  }
+  .laurel {
+    position: absolute; top: 50%;
+    width: 38px; height: 90px;
+    color: var(--gold);
+  }
+  .laurel.left { left: -4px; transform: translateY(-50%); }
+  .laurel.right { right: -4px; transform: translateY(-50%) scaleX(-1); }
+
+  .envelope-card .monogram {
+    font-family: 'Allura', 'Great Vibes', cursive;
+    font-size: 5.4rem;
+    line-height: 1.05;
+    color: #b8923f;
+    text-shadow:
+      0 1px 0 #d4af55,
+      0 2px 8px rgba(184, 146, 63, 0.4),
+      0 0 18px rgba(232, 210, 139, 0.35);
+    letter-spacing: 0.01em;
+  }
+  .envelope-card .monogram .amp {
+    font-family: 'Great Vibes', cursive;
+    color: #c9a961;
+    font-size: 0.78em;
+    vertical-align: 0.05em;
+    padding: 0 0.08em;
+    text-shadow:
+      0 1px 0 #e2c98a,
+      0 2px 6px rgba(201, 169, 97, 0.45);
+  }
+
+  .envelope-card .invite-label {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.9rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 1.5rem 0 0.5rem;
+  }
+  .envelope-card .invite-label::before,
+  .envelope-card .invite-label::after {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .envelope-card .guest-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.6rem;
+    color: var(--ink);
+    line-height: 1.2;
+    margin: 1rem 0 0.3rem;
+    font-weight: 400;
+  }
+  .envelope-card .guest-greeting {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.75rem;
+  }
+
+  .divider-diamond {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.6rem;
+    margin: 0.5rem 0 1.75rem;
+  }
+  .divider-diamond .line {
+    width: 70px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .divider-diamond .dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 6px rgba(201, 169, 97, 0.6);
+  }
+
+  .open-btn {
+    position: relative;
+    background: linear-gradient(135deg, #3a2e2a 0%, #5a4540 100%);
+    color: var(--cream);
+    border: none;
+    padding: 1.1rem 3rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(58, 46, 42, 0.35);
+  }
+  .open-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(232, 210, 139, 0.45), transparent);
+    transition: left 0.7s ease;
+  }
+  .open-btn:hover::before { left: 100%; }
+  .open-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #b8923f 0%, #e2c98a 100%);
+    box-shadow: 0 16px 36px rgba(201, 169, 97, 0.45);
+  }
+
+  /* ===== FLOATING PETALS ===== */
+  /* ===== GLOBAL HEARTS — rơi đều cả trang như mưa ===== */
+  .global-hearts {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .heart-fall {
+    position: absolute;
+    color: rgba(232, 145, 165, 0.65);
+    animation: heartFallDown linear infinite;
+    filter: drop-shadow(0 2px 5px rgba(212, 130, 145, 0.3));
+  }
+  .heart-fall svg { width: 100%; height: 100%; display: block; }
+  @keyframes heartFallDown {
+    0%   { transform: translate3d(0, -10vh, 0) rotate(-12deg); opacity: 0; }
+    10%  { opacity: 1; }
+    50%  { transform: translate3d(24px, 50vh, 0) rotate(14deg); }
+    90%  { opacity: 1; }
+    100% { transform: translate3d(-18px, 110vh, 0) rotate(-8deg); opacity: 0; }
+  }
+
+  .petals { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+  .petal {
+    position: absolute;
+    width: 14px; height: 14px;
+    background: radial-gradient(circle at 30% 30%, #f4d4d0, #d4a5a0);
+    border-radius: 50% 0 50% 50%;
+    opacity: 0.55;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(110vh) translateX(40px) rotate(720deg); opacity: 0; }
+  }
+
+  /* ===== MUSIC TOGGLE ===== */
+  .music-toggle {
+    position: fixed; bottom: 24px; right: 24px;
+    z-index: 100;
+    width: 48px; height: 48px;
+    background: var(--ink); color: var(--cream);
+    border-radius: 50%; border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+  }
+  .music-toggle:hover { background: var(--gold); }
+  .music-toggle.playing svg { animation: spin 4s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== AUTO-SCROLL TOGGLE ===== */
+  .autoscroll-toggle {
+    position: fixed; bottom: 24px; right: 84px;
+    z-index: 100;
+    width: 48px; height: 48px;
+    background: var(--ink); color: var(--cream);
+    border-radius: 50%; border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+  }
+  .autoscroll-toggle:hover { background: var(--gold); }
+  .autoscroll-toggle.on {
+    background: var(--gold);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  .autoscroll-toggle.on svg { animation: arrowSlide 1.4s ease-in-out infinite; }
+  @keyframes scrollPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.7), var(--shadow-md); }
+    50%      { box-shadow: 0 0 0 12px rgba(201, 169, 97, 0), var(--shadow-md); }
+  }
+  @keyframes arrowSlide {
+    0%, 100% { transform: translateY(-2px); opacity: 0.8; }
+    50%      { transform: translateY(3px); opacity: 1; }
+  }
+
+  /* Toast hint khi auto-scroll bật */
+  .autoscroll-hint {
+    position: fixed;
+    bottom: 84px; right: 24px;
+    z-index: 99;
+    background: rgba(58, 46, 42, 0.92);
+    color: var(--cream);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    max-width: 220px;
+  }
+  .autoscroll-hint.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .autoscroll-hint::after {
+    content: '';
+    position: absolute;
+    right: 28px; bottom: -6px;
+    width: 12px; height: 12px;
+    background: inherit;
+    transform: rotate(45deg);
+  }
+
+  /* ===== SECTIONS COMMON ===== */
+  section {
+    padding: 6rem 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+  .section-ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; margin: 1.5rem 0 3.5rem;
+  }
+  .section-ornament::before, .section-ornament::after {
+    content: ''; width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .section-ornament svg { color: var(--gold); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    background:
+      linear-gradient(180deg, rgba(253, 245, 247, 0.78) 0%, rgba(245, 221, 228, 0.92) 100%),
+      url('images/gallery/DSC_3218.jpg') center/cover;
+    padding: 4rem 1.5rem;
+  }
+  .hero-inner {
+    max-width: 800px;
+    position: relative;
+  }
+  .hero .save-the-date {
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .hero h1 .amp {
+    color: var(--gold);
+    font-size: 0.9em;
+    display: inline-block;
+    padding: 0 0.3em;
+  }
+  .hero .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin: 2rem 0;
+  }
+  .hero .date-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2.5rem;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    margin-top: 1rem;
+  }
+  .hero .date-block .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero .date-block .lbl {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+  }
+  .hero .date-block .sep {
+    width: 1px; height: 40px;
+    background: var(--gold);
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%; transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -8px); }
+  }
+
+  /* ===== COUNTDOWN ===== */
+  .countdown {
+    background: var(--cream-deep);
+    text-align: center;
+  }
+  .countdown .section-title {
+    font-size: clamp(3.6rem, 8vw, 5.5rem);
+  }
+  .countdown-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    border-radius: 16px;
+    padding: 2.2rem 1.8rem;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    box-shadow:
+      inset 0 0 0 1px rgba(201, 169, 97, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 0 0 6px rgba(253, 245, 247, 0.4),
+      0 0 0 7px rgba(201, 169, 97, 0.3),
+      0 22px 60px rgba(58, 46, 42, 0.16);
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: "stack";
+  }
+
+  /* Spotlight ở giữa — nhẹ hơn vì card đã trong */
+  .countdown-card::after {
+    content: '';
+    grid-area: stack;
+    background: radial-gradient(ellipse 65% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.2) 55%, transparent 85%);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  /* Layer lịch ở phía sau — mờ ảo */
+  .cal-layer {
+    grid-area: stack;
+    opacity: 0.32;
+    filter: blur(0.4px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* Countdown nổi lên trên, được spotlight làm sáng */
+  .countdown-card .countdown-grid {
+    grid-area: stack;
+    align-self: center;
+    z-index: 3;
+    position: relative;
+  }
+  .countdown-card .countdown-item .num {
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    color: #b8516b;
+    font-weight: 600;
+    line-height: 1;
+    text-shadow:
+      0 2px 18px rgba(255, 255, 255, 1),
+      0 0 10px rgba(255, 255, 255, 0.95),
+      0 0 3px rgba(255, 255, 255, 0.95);
+    letter-spacing: -0.01em;
+  }
+  .countdown-card .countdown-item .lbl {
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+    color: var(--ink);
+    font-weight: 500;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+    margin-top: 0.7rem;
+  }
+
+  /* Calendar */
+  .cal-month {
+    text-align: center;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    color: var(--rose);
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+    text-align: center;
+    border-top: 1px solid rgba(58, 46, 42, 0.08);
+    padding-top: 1rem;
+  }
+  .cal-day-name {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    padding: 0.45rem 0;
+    font-weight: 500;
+  }
+  .cal-day {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    color: var(--ink);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  .cal-day.empty { visibility: hidden; }
+  .cal-day.highlight {
+    color: var(--ink);
+    font-weight: 600;
+    background: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23f29db1' fill-opacity='0.45' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>");
+    background-size: 110% 110%;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    box-shadow: none;
+    animation: dayPulse 3s ease-in-out infinite;
+  }
+  @keyframes dayPulse {
+    0%, 100% { transform: scale(1); opacity: 0.92; }
+    50%      { transform: scale(1.08); opacity: 1; }
+  }
+
+  /* Divider giữa calendar và countdown */
+  .cal-divider {
+    height: 1px;
+    background: rgba(58, 46, 42, 0.08);
+    margin: 1.5rem 0 1.3rem;
+  }
+
+  /* Countdown numbers (bên trong card) */
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: none;
+    margin: 0;
+  }
+  .countdown-item {
+    background: transparent;
+    padding: 0.3rem 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .countdown-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+    color: var(--rose);
+    line-height: 1;
+    font-weight: 500;
+  }
+  .countdown-item .lbl {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: lowercase;
+    color: var(--ink-soft);
+    margin-top: 0.5rem;
+  }
+
+  /* ===== COUPLE ===== */
+  .couple { position: relative; overflow: hidden; }
+  .couple-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .couple-card { text-align: center; }
+  .couple-card { position: relative; }
+  .couple-card .photo-frame {
+    width: 300px; height: 400px;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    border-radius: 200px 200px 4px 4px;
+    position: relative;
+    border: 12px solid var(--white);
+    animation: photoFloat 6s ease-in-out infinite;
+    transition: box-shadow 0.5s ease;
+    will-change: transform;
+    /* 3 lớp trim: gold mảnh + gap trắng + gold mờ ngoài → tạo viền sang trọng */
+    box-shadow:
+      0 0 0 1px rgba(201, 169, 97, 0.75),
+      0 0 0 4px var(--cream),
+      0 0 0 5px rgba(201, 169, 97, 0.4),
+      0 10px 20px rgba(58, 46, 42, 0.10),
+      0 28px 55px rgba(192, 133, 128, 0.30);
+  }
+  .couple-card:nth-of-type(2) .photo-frame { animation-delay: -3s; }
+  @keyframes photoFloat {
+    0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+    50%      { transform: translateY(-16px) rotate(0.5deg); }
+  }
+  /* Inner gold line trong khung (hiện trên border trắng) */
+  .couple-card .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(201, 169, 97, 0.5);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .couple-card .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .couple-card:hover .photo-frame {
+    box-shadow:
+      0 0 0 1px rgba(201, 169, 97, 0.85),
+      0 0 0 4px var(--cream),
+      0 0 0 5px rgba(201, 169, 97, 0.55),
+      0 14px 28px rgba(58, 46, 42, 0.14),
+      0 42px 80px rgba(192, 133, 128, 0.45);
+  }
+  .couple-card:hover .photo-frame img { transform: scale(1.06); }
+
+  /* Ornament hoa văn vàng đặt trên đỉnh vòm */
+  .couple-card .frame-ornament {
+    display: block;
+    width: 110px; height: auto;
+    margin: 0 auto -14px;
+    color: var(--gold);
+    filter: drop-shadow(0 2px 4px rgba(184, 146, 63, 0.35));
+    position: relative;
+    z-index: 4;
+    animation: ornamentFloat 6s ease-in-out infinite;
+  }
+  .couple-card:nth-of-type(2) .frame-ornament { animation-delay: -3s; }
+  @keyframes ornamentFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-16px); }
+  }
+  .couple-card .role {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .couple-card .name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.6rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+  .couple-card .parents {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .couple-card .bio {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .couple-card .socials {
+    margin-top: 1rem;
+    display: flex; gap: 0.8rem; justify-content: center;
+  }
+  .couple-card .socials a {
+    color: var(--ink-soft);
+    transition: color 0.3s;
+  }
+  .couple-card .socials a:hover { color: var(--rose); }
+  .couple-divider {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: var(--rose);
+    line-height: 1;
+    animation: dividerPulse 3.5s ease-in-out infinite;
+  }
+  @keyframes dividerPulse {
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.08); opacity: 1; }
+  }
+
+  /* Floating hearts trong couple section */
+  .couple-hearts {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .heart-float {
+    position: absolute;
+    color: rgba(232, 145, 165, 0.7);
+    animation: heartRise linear infinite;
+    filter: drop-shadow(0 2px 6px rgba(212, 130, 145, 0.35));
+  }
+  @keyframes heartRise {
+    0%   { transform: translateY(110vh) translateX(0) rotate(-10deg) scale(0.6); opacity: 0; }
+    10%  { opacity: 0.9; }
+    50%  { transform: translateY(50vh) translateX(20px) rotate(8deg) scale(1); }
+    90%  { opacity: 0.9; }
+    100% { transform: translateY(-15vh) translateX(-15px) rotate(-6deg) scale(0.85); opacity: 0; }
+  }
+
+  /* ===== STORY ===== */
+  .story {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+  }
+  .timeline {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item .dot {
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px var(--cream);
+    position: relative;
+    z-index: 2;
+  }
+  .timeline-item .content {
+    background: var(--white);
+    padding: 1.5rem 1.75rem;
+    border-radius: 4px;
+    box-shadow: var(--shadow-sm);
+  }
+  .timeline-item:nth-child(even) .content:nth-of-type(1) { visibility: hidden; }
+  .timeline-item .year {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--ink);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .timeline-item p { font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* ===== EVENTS ===== */
+  .events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .event-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.4s ease;
+    border: 1px solid rgba(201, 169, 97, 0.15);
+  }
+  .event-card:hover { transform: translateY(-6px); }
+  .event-card .icon {
+    width: 60px; height: 60px;
+    margin: 0 auto 1.5rem;
+    color: var(--gold);
+  }
+  .event-card h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .event-card .who {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--rose);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .event-card .time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .event-card .date-vn {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+  .event-card .venue {
+    padding: 1.25rem;
+    background: var(--cream);
+    border-radius: 4px;
+    margin: 1rem 0 1.5rem;
+  }
+  .event-card .venue strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .event-card .venue .addr {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .btn-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .btn-link:hover { background: var(--ink); color: var(--cream); }
+
+  /* ===== GALLERY ===== */
+  .gallery {
+    background:
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 30%, var(--cream-deep) 70%, var(--cream) 100%),
+      radial-gradient(circle at 15% 20%, rgba(232, 197, 192, 0.30), transparent 35%),
+      radial-gradient(circle at 85% 80%, rgba(212, 165, 160, 0.25), transparent 35%);
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery::before,
+  .gallery::after {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.10), transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .gallery::before { top: -120px; left: -120px; }
+  .gallery::after  { bottom: -120px; right: -120px; }
+
+  .gallery .container { position: relative; z-index: 1; }
+
+  /* CSS columns layout — true masonry, ảnh giữ nguyên aspect ratio (không crop) */
+  .gallery-grid {
+    columns: 4;
+    column-gap: 0.85rem;
+  }
+  .gallery-grid .img {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(58, 46, 42, 0.10);
+    position: relative;
+    background: var(--white);
+    transition: box-shadow 0.4s ease;
+    break-inside: avoid;
+    margin-bottom: 0.85rem;
+    display: block;
+    /* Ảnh bồng bềnh nhẹ — luôn hiện sẵn, không lazy load */
+    animation: imgFloat 6s ease-in-out infinite;
+    will-change: transform;
+  }
+  @keyframes imgFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  /* Stagger timing — 40 ảnh không bay đồng bộ */
+  .gallery-grid .img:nth-child(2n)   { animation-duration: 7s;   animation-delay: -1.2s; }
+  .gallery-grid .img:nth-child(3n)   { animation-duration: 5.5s; animation-delay: -2.5s; }
+  .gallery-grid .img:nth-child(4n+1) { animation-duration: 8s;   animation-delay: -3.8s; }
+  .gallery-grid .img:nth-child(5n+2) { animation-duration: 6.5s; animation-delay: -0.6s; }
+  .gallery-grid .img:nth-child(7n+3) { animation-duration: 7.5s; animation-delay: -4.2s; }
+  .gallery-grid .img:hover {
+    box-shadow: 0 14px 32px rgba(58, 46, 42, 0.22), 0 0 0 1px rgba(201, 169, 97, 0.4);
+    animation-play-state: paused;
+  }
+  .gallery-grid .img img {
+    width: 100%;
+    height: auto;          /* preserve aspect ratio, no crop */
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .gallery-grid .img:hover img { transform: scale(1.04); }
+  .gallery-grid .img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, transparent 55%, rgba(58, 46, 42, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .gallery-grid .img:hover::after { opacity: 1; }
+  .gallery-grid .img .zoom-icon {
+    position: absolute;
+    bottom: 14px; right: 14px;
+    width: 40px; height: 40px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink);
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28);
+    pointer-events: none;
+  }
+  .gallery-grid .img:hover .zoom-icon {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ===== THANK YOU MODAL (RSVP confirm) ===== */
+  .thank-modal {
+    position: fixed; inset: 0;
+    background: rgba(20, 8, 8, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 1rem;
+    animation: thankFadeIn 0.3s ease;
+  }
+  .thank-modal.open { display: flex; }
+  @keyframes thankFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .thank-card {
+    background: radial-gradient(ellipse at top, #fdfaf3 0%, #f5ecd9 100%);
+    padding: 2.8rem 2.2rem 2.2rem;
+    border-radius: 16px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+      0 0 0 6px rgba(253, 245, 247, 0.4),
+      0 0 0 7px rgba(201, 169, 97, 0.3),
+      0 35px 80px rgba(0, 0, 0, 0.45);
+    animation: thankCardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes thankCardIn {
+    from { opacity: 0; transform: translateY(24px) scale(0.92); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .thank-card::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .thank-heart {
+    width: 56px; height: 56px;
+    margin: 0 auto 0.8rem;
+    color: #f29db1;
+    filter: drop-shadow(0 6px 14px rgba(242, 157, 177, 0.45));
+    animation: heartBeat 1.3s ease-in-out infinite;
+  }
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    25%      { transform: scale(1.12); }
+    50%      { transform: scale(0.95); }
+    75%      { transform: scale(1.08); }
+  }
+
+  .thank-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.6rem;
+    margin: 0.4rem 0 1rem;
+  }
+  .thank-divider .line {
+    width: 50px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .thank-divider .dot {
+    width: 5px; height: 5px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .thank-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .thank-title .name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.55em;
+    color: var(--gold);
+    display: inline-block;
+    padding: 0 0.08em;
+    line-height: 0.9;
+    vertical-align: -0.05em;
+  }
+
+  .thank-msg {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin: 0.6rem 0 1.8rem;
+    font-style: italic;
+  }
+
+  .thank-close {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: linear-gradient(135deg, #3a2e2a 0%, #5a4540 100%);
+    color: var(--cream);
+    border: none;
+    padding: 0.95rem 2.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 20px rgba(58, 46, 42, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .thank-close::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(232, 210, 139, 0.5), transparent);
+    transition: left 0.6s ease;
+  }
+  .thank-close:hover::before { left: 100%; }
+  .thank-close:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #b8923f 0%, #e2c98a 100%);
+    box-shadow: 0 12px 28px rgba(201, 169, 97, 0.45);
+  }
+
+  @media (max-width: 480px) {
+    .thank-card { padding: 2rem 1.4rem 1.7rem; }
+    .thank-title { font-size: 1.4rem; }
+    .thank-msg { font-size: 0.85rem; }
+    .thank-heart { width: 48px; height: 48px; }
+  }
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(20, 8, 8, 0.94);
+    z-index: 9998;
+    display: none;
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(10px);
+    animation: lbFadeIn 0.3s ease;
+  }
+  .lightbox.open { display: flex; }
+  @keyframes lbFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .lightbox img {
+    max-width: 92vw; max-height: 86vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+    animation: lbZoom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes lbZoom {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .lightbox button {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    font-size: 1.6rem; line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(6px);
+    transition: background 0.25s ease, transform 0.25s ease;
+    font-family: serif;
+  }
+  .lightbox button:hover { background: rgba(255, 255, 255, 0.30); }
+  .lightbox .lb-close { top: 24px; right: 24px; }
+  .lightbox .lb-prev  { left: 24px; top: 50%; transform: translateY(-50%); }
+  .lightbox .lb-next  { right: 24px; top: 50%; transform: translateY(-50%); }
+  .lightbox .lb-prev:hover { transform: translateY(-50%) scale(1.08); }
+  .lightbox .lb-next:hover { transform: translateY(-50%) scale(1.08); }
+  .lightbox .lb-close:hover { transform: scale(1.08) rotate(90deg); }
+  .lightbox .lb-counter {
+    position: absolute;
+    bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    letter-spacing: 0.32em;
+    font-size: 0.78rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.55rem 1.2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* ===== RSVP ===== */
+  .rsvp {
+    background:
+      linear-gradient(rgba(253, 245, 247, 0.94), rgba(245, 221, 228, 0.96)),
+      url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80') center/cover fixed;
+  }
+  .rsvp-form {
+    max-width: 540px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+  }
+  .form-row { margin-bottom: 1.25rem; }
+  .form-row label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+  }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #e5dccc;
+    background: var(--cream);
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color 0.3s;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .form-row textarea { min-height: 90px; resize: vertical; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: var(--gold); }
+
+  /* ===== GIFT ===== */
+  .gift-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .gift-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(201, 169, 97, 0.15);
+  }
+  .gift-card .who-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .gift-card .who-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .qr-box {
+    width: 160px; height: 160px;
+    margin: 0 auto 1.25rem;
+    background: var(--cream);
+    border: 1px solid #e5dccc;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px;
+  }
+  .qr-box img { width: 100%; height: 100%; object-fit: contain; }
+  .bank-info {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .bank-info strong { color: var(--ink); display: block; font-family: 'Playfair Display', serif; font-size: 1rem; }
+  .acc-num {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .acc-num:hover { color: var(--rose); }
+  .copy-hint { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; }
+
+  /* ===== WISHES ===== */
+  .wishes { background: var(--cream-deep); }
+  @keyframes wishFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .wishes-list {
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 4px;
+  }
+  .wish-item {
+    background: var(--white);
+    padding: 1rem 1.4rem 1rem 1.4rem;
+    border-radius: 22px;
+    box-shadow:
+      0 4px 14px rgba(58, 46, 42, 0.08),
+      0 0 0 1px rgba(201, 169, 97, 0.22);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  /* Trái tim accent nhỏ ở góc trên phải */
+  .wish-item::after {
+    content: '';
+    position: absolute;
+    top: 12px; right: 14px;
+    width: 14px; height: 14px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23f29db1' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>") center/contain no-repeat;
+    opacity: 0.55;
+  }
+  .wish-item .name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  /* Heart icon trước tên */
+  .wish-item .name::before {
+    content: '';
+    width: 16px; height: 16px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23c9a961' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>") center/contain no-repeat;
+    flex-shrink: 0;
+  }
+  .wish-item .msg { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; }
+  /* Scrollbar mỏng cho wishes-list */
+  .wishes-list::-webkit-scrollbar { width: 6px; }
+  .wishes-list::-webkit-scrollbar-track { background: transparent; }
+  .wishes-list::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 97, 0.4);
+    border-radius: 3px;
+  }
+  .wishes-list::-webkit-scrollbar-thumb:hover { background: rgba(201, 169, 97, 0.6); }
+  .wish-form {
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    background: var(--white);
+    padding: 1.8rem 2rem 1.6rem;
+    border-radius: 22px;
+    box-shadow:
+      0 16px 44px rgba(58, 46, 42, 0.14),
+      0 0 0 1px rgba(201, 169, 97, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .wish-form:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 22px 56px rgba(58, 46, 42, 0.18),
+      0 0 0 1px rgba(201, 169, 97, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  .wish-form-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  .wish-form-title::before { content: '✍️ '; }
+
+  /* Thời gian gửi lời chúc */
+  .wish-item .time {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 5rem 1.5rem 2.5rem;
+  }
+  footer .thanks {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  footer .names {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+  }
+  footer .heart-line {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem;
+    opacity: 0.6;
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  footer .heart-line::before, footer .heart-line::after {
+    content: ''; width: 40px; height: 1px;
+    background: var(--gold-light);
+  }
+
+  /* ===== REVEAL ANIMATION ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE — TABLET & MOBILE ===== */
+  @media (max-width: 768px) {
+    section { padding: 4rem 1.25rem; }
+
+    /* Envelope opening — mobile */
+    .envelope-card {
+      padding: 3.2rem 1.5rem 2.2rem;
+      max-width: 92%;
+      box-shadow:
+        0 0 0 1px rgba(201, 169, 97, 0.6),
+        0 0 0 6px var(--cream),
+        0 0 0 7px rgba(201, 169, 97, 0.35),
+        0 24px 50px rgba(0, 0, 0, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.22);
+    }
+    .envelope-card::before { inset: 12px; }
+    .envelope-card::after { inset: 16px; }
+    .envelope-card .monogram { font-size: 3.4rem; }
+    .envelope-card .invite-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.32em;
+      margin: 1.1rem 0 0.4rem;
+    }
+    .envelope-card .invite-label::before,
+    .envelope-card .invite-label::after { width: 20px; }
+    .envelope-card .guest-name { font-size: 2rem; margin: 0.7rem 0 0.2rem; }
+    .envelope-card .guest-greeting { font-size: 0.82rem; margin-bottom: 1.3rem; }
+    .corner-ornament { width: 44px; height: 44px; }
+    .corner-ornament.tl { top: 14px; left: 14px; }
+    .corner-ornament.tr { top: 14px; right: 14px; }
+    .corner-ornament.bl { bottom: 14px; left: 14px; }
+    .corner-ornament.br { bottom: 14px; right: 14px; }
+    .wreath-wrap { padding: 0.4rem 2.6rem; }
+    .laurel { width: 26px; height: 70px; }
+    .laurel.left { left: -2px; }
+    .laurel.right { right: -2px; }
+    .divider-diamond .line { width: 50px; }
+    .divider-diamond { margin: 0.4rem 0 1.3rem; }
+    .open-btn { padding: 0.95rem 2.2rem; font-size: 0.72rem; letter-spacing: 0.32em; }
+
+    /* Hero — mobile */
+    .hero .save-the-date { font-size: 0.7rem; letter-spacing: 0.35em; margin-bottom: 1.2rem; }
+    .hero .tagline { font-size: 0.95rem; margin: 1.4rem 0; }
+    .hero .date-block { gap: 1rem; padding: 1.25rem 1.5rem; }
+    .hero .date-block .num { font-size: 1.6rem; }
+    .hero .date-block .lbl { font-size: 0.6rem; letter-spacing: 0.2em; }
+    .hero .date-block .sep { height: 32px; }
+
+    /* Sections — common mobile */
+    .section-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .section-ornament { margin: 1rem 0 2.5rem; }
+    .section-ornament::before, .section-ornament::after { width: 40px; }
+
+    /* Countdown card — mobile compact */
+    .countdown .section-title { font-size: clamp(2.4rem, 10vw, 3.8rem); }
+    .countdown-card {
+      padding: 1.6rem 1rem;
+      max-width: 100%;
+      border-radius: 14px;
+      box-shadow:
+        inset 0 0 0 1px rgba(201, 169, 97, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        0 0 0 3px rgba(253, 245, 247, 0.4),
+        0 0 0 4px rgba(201, 169, 97, 0.3),
+        0 14px 32px rgba(58, 46, 42, 0.14);
+    }
+    .cal-month {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      margin-bottom: 0.9rem;
+    }
+    .cal-grid { gap: 0.15rem; padding-top: 0.8rem; }
+    .cal-day-name { font-size: 0.6rem; padding: 0.3rem 0; letter-spacing: 0.02em; }
+    .cal-day { font-size: 0.78rem; }
+    .countdown-grid { gap: 0.4rem; }
+    .countdown-card .countdown-item .num { font-size: 1.85rem; }
+    .countdown-card .countdown-item .lbl {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      margin-top: 0.4rem;
+    }
+    .couple-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .couple-divider { font-size: 3.5rem; }
+    .couple-card .photo-frame { width: 250px; height: 335px; border-width: 8px; }
+    .events-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .gallery-grid { columns: 3; column-gap: 0.5rem; }
+    .gallery-grid .img { margin-bottom: 0.5rem; }
+    .lightbox button { width: 44px; height: 44px; font-size: 1.4rem; }
+    .lightbox .lb-close { top: 16px; right: 16px; }
+    .lightbox .lb-prev  { left: 12px; }
+    .lightbox .lb-next  { right: 12px; }
+    .gift-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 20px; }
+    .timeline-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+    .timeline-item .dot { grid-column: 1; justify-self: center; }
+    .timeline-item .content { grid-column: 2; }
+    .timeline-item > div:empty { display: none; }
+    .timeline-item:nth-child(even) .content { visibility: visible; }
+    .rsvp-form, .gift-card { padding: 2rem 1.5rem; }
+
+    /* Music + Auto-scroll toggle — mobile (tránh che nội dung) */
+    .music-toggle { width: 42px; height: 42px; bottom: 18px; right: 18px; }
+    .autoscroll-toggle { width: 42px; height: 42px; bottom: 18px; right: 70px; }
+    .autoscroll-hint { bottom: 70px; right: 18px; font-size: 0.7rem; }
+  }
+
+  /* ===== RESPONSIVE — VERY SMALL PHONES (<= 420px) ===== */
+  @media (max-width: 420px) {
+    /* Countdown thêm nén cho điện thoại nhỏ */
+    .countdown-card { padding: 1.3rem 0.7rem; }
+    .cal-day { font-size: 0.72rem; }
+    .cal-day-name { font-size: 0.56rem; }
+    .countdown-card .countdown-item .num { font-size: 1.6rem; }
+    .countdown-card .countdown-item .lbl { font-size: 0.55rem; letter-spacing: 0.15em; }
+
+    .envelope-card { padding: 2.6rem 1.1rem 1.8rem; }
+    .envelope-card .monogram { font-size: 2.9rem; }
+    .envelope-card .guest-name { font-size: 1.75rem; }
+    .corner-ornament { width: 38px; height: 38px; }
+    .wreath-wrap { padding: 0.3rem 2.2rem; }
+    .laurel { width: 22px; height: 60px; }
+    .open-btn { padding: 0.85rem 1.8rem; font-size: 0.68rem; letter-spacing: 0.28em; }
+
+    .hero .save-the-date { font-size: 0.62rem; letter-spacing: 0.3em; }
+    .hero .date-block { padding: 1rem 1.2rem; gap: 0.8rem; }
+    .hero .date-block .num { font-size: 1.4rem; }
+
+    section { padding: 3.2rem 1rem; }
+    .gallery-grid { columns: 2; }
+  }
+
+  /* ===== RESPONSIVE — LANDSCAPE PHONES / SHORT VIEWPORTS ===== */
+  @media (max-height: 600px) {
+    #envelope {
+      overflow-y: auto;
+      padding: 2rem 1rem;
+      align-items: flex-start;
+    }
+    .envelope-card {
+      padding: 2.4rem 1.5rem 1.8rem;
+      margin: auto;
+    }
+    .envelope-card .monogram { font-size: 2.6rem; }
+    .envelope-card .guest-name { font-size: 1.7rem; margin: 0.4rem 0 0.2rem; }
+    .envelope-card .guest-greeting { margin-bottom: 1rem; font-size: 0.78rem; }
+    .envelope-card .invite-label { margin: 0.7rem 0 0.3rem; }
+    .wreath-wrap { padding: 0.2rem 2.2rem; margin-bottom: 0.2rem; }
+    .laurel { height: 55px; }
+    .divider-diamond { margin: 0.3rem 0 1rem; }
+    .open-btn { padding: 0.75rem 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ENVELOPE ===== -->
+<div id="envelope">
+  <!-- Floating sparkles + bokeh -->
+  <div class="sparkle-layer" id="sparkleLayer"></div>
+  <div class="bokeh-layer" id="bokehLayer"></div>
+
+  <div class="envelope-card">
+    <!-- Corner SVG ornaments -->
+    <svg class="corner-ornament tl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
+      <path d="M4 32 Q4 12, 24 6 Q40 4, 60 4"/>
+      <path d="M10 30 Q12 18, 22 14"/>
+      <ellipse cx="14" cy="9" rx="3.2" ry="1.4" transform="rotate(-30 14 9)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="26" cy="6" rx="3.2" ry="1.4" transform="rotate(-12 26 6)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="40" cy="4" rx="3.2" ry="1.4" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="20" cy="17" rx="2.5" ry="1.1" transform="rotate(-45 20 17)" fill="currentColor" opacity="0.6"/>
+      <circle cx="4" cy="32" r="1.6" fill="currentColor"/>
+      <circle cx="60" cy="4" r="1.6" fill="currentColor"/>
+      <circle cx="24" cy="6" r="2" fill="currentColor" opacity="0.55"/>
+    </svg>
+    <svg class="corner-ornament tr" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
+      <path d="M4 32 Q4 12, 24 6 Q40 4, 60 4"/>
+      <path d="M10 30 Q12 18, 22 14"/>
+      <ellipse cx="14" cy="9" rx="3.2" ry="1.4" transform="rotate(-30 14 9)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="26" cy="6" rx="3.2" ry="1.4" transform="rotate(-12 26 6)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="40" cy="4" rx="3.2" ry="1.4" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="20" cy="17" rx="2.5" ry="1.1" transform="rotate(-45 20 17)" fill="currentColor" opacity="0.6"/>
+      <circle cx="4" cy="32" r="1.6" fill="currentColor"/>
+      <circle cx="60" cy="4" r="1.6" fill="currentColor"/>
+      <circle cx="24" cy="6" r="2" fill="currentColor" opacity="0.55"/>
+    </svg>
+    <svg class="corner-ornament bl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
+      <path d="M4 32 Q4 12, 24 6 Q40 4, 60 4"/>
+      <path d="M10 30 Q12 18, 22 14"/>
+      <ellipse cx="14" cy="9" rx="3.2" ry="1.4" transform="rotate(-30 14 9)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="26" cy="6" rx="3.2" ry="1.4" transform="rotate(-12 26 6)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="40" cy="4" rx="3.2" ry="1.4" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="20" cy="17" rx="2.5" ry="1.1" transform="rotate(-45 20 17)" fill="currentColor" opacity="0.6"/>
+      <circle cx="4" cy="32" r="1.6" fill="currentColor"/>
+      <circle cx="60" cy="4" r="1.6" fill="currentColor"/>
+      <circle cx="24" cy="6" r="2" fill="currentColor" opacity="0.55"/>
+    </svg>
+    <svg class="corner-ornament br" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
+      <path d="M4 32 Q4 12, 24 6 Q40 4, 60 4"/>
+      <path d="M10 30 Q12 18, 22 14"/>
+      <ellipse cx="14" cy="9" rx="3.2" ry="1.4" transform="rotate(-30 14 9)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="26" cy="6" rx="3.2" ry="1.4" transform="rotate(-12 26 6)" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="40" cy="4" rx="3.2" ry="1.4" fill="currentColor" opacity="0.75"/>
+      <ellipse cx="20" cy="17" rx="2.5" ry="1.1" transform="rotate(-45 20 17)" fill="currentColor" opacity="0.6"/>
+      <circle cx="4" cy="32" r="1.6" fill="currentColor"/>
+      <circle cx="60" cy="4" r="1.6" fill="currentColor"/>
+      <circle cx="24" cy="6" r="2" fill="currentColor" opacity="0.55"/>
+    </svg>
+
+    <!-- Monogram with laurel wreath -->
+    <div class="wreath-wrap">
+      <svg class="laurel left" viewBox="0 0 40 90" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+        <path d="M32 6 Q18 28, 22 45 Q26 62, 10 84"/>
+        <ellipse cx="24" cy="14" rx="5.5" ry="2.2" transform="rotate(-45 24 14)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="20" cy="24" rx="5.5" ry="2.2" transform="rotate(-50 20 24)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="18" cy="34" rx="5.5" ry="2.2" transform="rotate(-58 18 34)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="20" cy="44" rx="5.5" ry="2.2" transform="rotate(-65 20 44)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="20" cy="54" rx="5.5" ry="2.2" transform="rotate(-75 20 54)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="16" cy="64" rx="5.5" ry="2.2" transform="rotate(-82 16 64)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="14" cy="74" rx="5.5" ry="2.2" transform="rotate(-90 14 74)" fill="currentColor" opacity="0.7"/>
+        <circle cx="32" cy="6" r="2" fill="currentColor"/>
+        <circle cx="10" cy="84" r="1.5" fill="currentColor"/>
+      </svg>
+      <div class="monogram">M <span class="amp">&amp;</span> T</div>
+      <svg class="laurel right" viewBox="0 0 40 90" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+        <path d="M32 6 Q18 28, 22 45 Q26 62, 10 84"/>
+        <ellipse cx="24" cy="14" rx="5.5" ry="2.2" transform="rotate(-45 24 14)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="20" cy="24" rx="5.5" ry="2.2" transform="rotate(-50 20 24)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="18" cy="34" rx="5.5" ry="2.2" transform="rotate(-58 18 34)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="20" cy="44" rx="5.5" ry="2.2" transform="rotate(-65 20 44)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="20" cy="54" rx="5.5" ry="2.2" transform="rotate(-75 20 54)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="16" cy="64" rx="5.5" ry="2.2" transform="rotate(-82 16 64)" fill="currentColor" opacity="0.75"/>
+        <ellipse cx="14" cy="74" rx="5.5" ry="2.2" transform="rotate(-90 14 74)" fill="currentColor" opacity="0.7"/>
+        <circle cx="32" cy="6" r="2" fill="currentColor"/>
+        <circle cx="10" cy="84" r="1.5" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <div class="invite-label">Trân trọng kính mời</div>
+
+    <div class="guest-name" id="guestName">Quý khách</div>
+    <div class="guest-greeting">đến chung vui cùng chúng tôi</div>
+
+    <div class="divider-diamond">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span class="line"></span>
+    </div>
+
+    <div class="open-btn-wrap">
+      <!-- Ngón tay chỉ ngang sang nút, nhấp nhảy phải -->
+      <div class="finger-pointer" aria-hidden="true">👉</div>
+      <button class="open-btn" onclick="openInvite()">
+        <span class="btn-text">Bạn hãy mở ra nhé</span>
+      </button>
+      <!-- Sparkles ở 4 góc -->
+      <span class="btn-sparkle tl"></span>
+      <span class="btn-sparkle tr"></span>
+      <span class="btn-sparkle bl"></span>
+      <span class="btn-sparkle br"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PETALS BG ===== -->
+<div class="petals" id="petals"></div>
+
+<!-- ===== GLOBAL HEARTS BG ===== -->
+<div class="global-hearts" id="globalHearts"></div>
+
+<!-- ===== MUSIC ===== -->
+<button class="music-toggle" id="musicBtn" onclick="toggleMusic()" aria-label="Bật/tắt nhạc">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle>
+  </svg>
+</button>
+
+<!-- ===== AUTO-SCROLL ===== -->
+<button class="autoscroll-toggle" id="autoScrollBtn" onclick="toggleAutoScroll()" aria-label="Tự cuộn trang">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v14M19 12l-7 7-7-7"/>
+  </svg>
+</button>
+<div class="autoscroll-hint" id="autoScrollHint">Đang tự cuộn — vuốt để dừng</div>
+<!-- Background music (HTML5 audio, local MP3) -->
+<audio id="bgm" src="music/nhac.mp3" loop preload="auto"></audio>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="save-the-date">Save the Date</div>
+    <h1>Mai Em<br><span class="amp">&amp;</span><br>Tiến Toàn</h1>
+    <p class="tagline">"Hai trái tim, một nhịp đập — một hành trình bắt đầu."</p>
+    <div class="date-block">
+      <div><div class="num">21</div><div class="lbl">Chủ Nhật</div></div>
+      <div class="sep"></div>
+      <div><div class="num">Tháng 6</div><div class="lbl">&&&</div></div>
+      <div class="sep"></div>
+      <div><div class="num">2026</div><div class="lbl">10.00 Sáng</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Bất ngờ ở phía dưới nhé ! </div>
+</section>
+
+<!-- ===== COUNTDOWN ===== -->
+<section class="countdown reveal">
+  <div class="container">
+    <h2 class="section-title">Save the Date</h2>
+    <span class="section-label">Hãy đếm ngược cùng vợ chồng mình nhé</span>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+    <div class="countdown-card">
+      <!-- Layer 1: lịch mờ ảo phía sau -->
+      <div class="cal-layer">
+        <div class="cal-month" id="calMonth">THÁNG 6 / 2026</div>
+        <div class="cal-grid" id="calGrid">
+          <div class="cal-day-name">Thứ 2</div>
+          <div class="cal-day-name">Thứ 3</div>
+          <div class="cal-day-name">Thứ 4</div>
+          <div class="cal-day-name">Thứ 5</div>
+          <div class="cal-day-name">Thứ 6</div>
+          <div class="cal-day-name">Thứ 7</div>
+          <div class="cal-day-name">CN</div>
+          <!-- ô ngày được JS render -->
+        </div>
+      </div>
+      <!-- Layer 2: countdown nổi trên cùng -->
+      <div class="countdown-grid">
+        <div class="countdown-item"><div class="num" id="cdDays">--</div><div class="lbl">Ngày</div></div>
+        <div class="countdown-item"><div class="num" id="cdHours">--</div><div class="lbl">Giờ</div></div>
+        <div class="countdown-item"><div class="num" id="cdMins">--</div><div class="lbl">Phút</div></div>
+        <div class="countdown-item"><div class="num" id="cdSecs">--</div><div class="lbl">Giây</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COUPLE ===== -->
+<section class="couple reveal">
+  <!-- Floating hearts -->
+  <div class="couple-hearts" aria-hidden="true">
+    <svg class="heart-float" style="left:4%;  width:18px; animation-duration:13s; animation-delay:-2s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:10%; width:14px; animation-duration:17s; animation-delay:-6s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:18%; width:26px; animation-duration:15s; animation-delay:-9s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:26%; width:14px; animation-duration:19s; animation-delay:-15s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:36%; width:20px; animation-duration:16s; animation-delay:-3s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:44%; width:12px; animation-duration:21s; animation-delay:-8s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:50%; width:28px; animation-duration:14s; animation-delay:-11s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:58%; width:16px; animation-duration:18s; animation-delay:-5s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:66%; width:22px; animation-duration:16s; animation-delay:-1s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:74%; width:14px; animation-duration:20s; animation-delay:-12s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:82%; width:24px; animation-duration:18s; animation-delay:-7s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:90%; width:18px; animation-duration:15s; animation-delay:-4s;"  viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:96%; width:14px; animation-duration:22s; animation-delay:-14s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="heart-float" style="left:32%; width:18px; animation-duration:17s; animation-delay:-10s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">Đôi uyên ương</h2>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+
+    <div class="couple-grid">
+      <div class="couple-card">
+        <svg class="frame-ornament" viewBox="0 0 110 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 14 Q22 6, 45 14"/>
+          <path d="M104 14 Q88 6, 65 14"/>
+          <ellipse cx="14" cy="12" rx="4" ry="1.4" transform="rotate(-30 14 12)" fill="currentColor" opacity="0.7"/>
+          <ellipse cx="24" cy="9"  rx="4" ry="1.4" transform="rotate(-18 24 9)"  fill="currentColor" opacity="0.7"/>
+          <ellipse cx="34" cy="8"  rx="4" ry="1.4" transform="rotate(-8 34 8)"   fill="currentColor" opacity="0.7"/>
+          <ellipse cx="96" cy="12" rx="4" ry="1.4" transform="rotate(30 96 12)"  fill="currentColor" opacity="0.7"/>
+          <ellipse cx="86" cy="9"  rx="4" ry="1.4" transform="rotate(18 86 9)"   fill="currentColor" opacity="0.7"/>
+          <ellipse cx="76" cy="8"  rx="4" ry="1.4" transform="rotate(8 76 8)"    fill="currentColor" opacity="0.7"/>
+          <rect x="52" y="10" width="6" height="6" transform="rotate(45 55 13)" fill="currentColor"/>
+          <circle cx="55" cy="13" r="1" fill="var(--cream)"/>
+        </svg>
+        <div class="photo-frame">
+          <img src="images/co-dau.jpg" alt="Cô dâu" loading="lazy" style="object-position: 70% center; transform: scale(1.18); transform-origin: 65% 35%;">
+        </div>
+        <div class="role">Cô dâu</div>
+        <div class="name"> Mai Em </div>
+        <div class="parents">Ái nữ của ông Phạm Ngọc Sỹ &amp; Bà Phí Thị Khuyên</div>
+        <p class="bio">Một cô gái mang nét đẹp dịu dàng của miền quê thanh bình, với tâm hồn tinh tế, chân thành và luôn tin vào hạnh phúc được vun đầy từ yêu thương.</p>
+      </div>
+      <div class="couple-divider">&amp;</div>
+
+      <div class="couple-card">
+        <svg class="frame-ornament" viewBox="0 0 110 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 14 Q22 6, 45 14"/>
+          <path d="M104 14 Q88 6, 65 14"/>
+          <ellipse cx="14" cy="12" rx="4" ry="1.4" transform="rotate(-30 14 12)" fill="currentColor" opacity="0.7"/>
+          <ellipse cx="24" cy="9"  rx="4" ry="1.4" transform="rotate(-18 24 9)"  fill="currentColor" opacity="0.7"/>
+          <ellipse cx="34" cy="8"  rx="4" ry="1.4" transform="rotate(-8 34 8)"   fill="currentColor" opacity="0.7"/>
+          <ellipse cx="96" cy="12" rx="4" ry="1.4" transform="rotate(30 96 12)"  fill="currentColor" opacity="0.7"/>
+          <ellipse cx="86" cy="9"  rx="4" ry="1.4" transform="rotate(18 86 9)"   fill="currentColor" opacity="0.7"/>
+          <ellipse cx="76" cy="8"  rx="4" ry="1.4" transform="rotate(8 76 8)"    fill="currentColor" opacity="0.7"/>
+          <rect x="52" y="10" width="6" height="6" transform="rotate(45 55 13)" fill="currentColor"/>
+          <circle cx="55" cy="13" r="1" fill="var(--cream)"/>
+        </svg>
+        <div class="photo-frame">
+          <img src="images/chu-re.jpg" alt="Chú rể" loading="lazy" style="object-position: 75% 8%;">
+        </div>
+        <div class="role">Chú rể</div>
+        <div class="name">Tiến Toàn</div>
+        <div class="parents">Quý nam của Ông Khổng Tiến Tấn &amp; Bà Nguyễn Thị Châu</div>
+        <p class="bio">Lớn lên giữa miền quê bình yên, anh mang trong mình sự điềm đạm, chân thành và nét giản dị đầy ấm áp của người đàn ông trưởng thành. Không quá ồn ào, nhưng luôn đủ tinh tế và vững chãi để trở thành bến đỗ bình yên của người mình thương</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORY ===== -->
+<section class="story reveal">
+  <div class="container">
+    <h2 class="section-title">Our Story</h2>
+    <span class="section-label">Hành trình của chúng tôi</span>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="content">
+          <div class="year">2022</div>
+          <h3>Lần đầu gặp gỡ</h3>
+          <p>Một cuộc gặp gỡ tình cờ đã bắt đầu cho câu chuyện của chúng mình. Từ những cuộc trò chuyện giản dị, hai trái tim dần trở nên thân thuộc lúc nào không hay.</p>
+        </div>
+        <div class="dot"></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="dot"></div>
+        <div class="content">
+          <div class="year">2023</div>
+          <h3>Bắt đầu yêu xa</h3>
+          <p>Anh sang Đài Loan làm việc, chúng mình bắt đầu yêu nhau bằng những cuộc gọi mỗi ngày, bằng sự chờ đợi và những lần đếm ngược ngày gặp lại.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="content">
+          <div class="year">2024</div>
+          <h3>Cùng nhau trưởng thành</h3>
+          <p>Dù cách nhau bởi khoảng cách và múi giờ, chúng mình vẫn luôn chọn đồng hành cùng nhau, chia sẻ từng niềm vui nhỏ và cùng nhau đi qua những tháng ngày trưởng thành.</p>
+        </div>
+        <div class="dot"></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="dot"></div>
+        <div class="content">
+          <div class="year">2025</div>
+          <h3>Ngày trở về</h3>
+          <p>Sau những năm tháng yêu xa, anh trở về mang theo sự vững chãi và lời hứa về một tương lai chung. Chúng mình hiểu rằng, sau tất cả, điều hạnh phúc nhất chính là chưa từng buông tay nhau.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="content">
+          <div class="year">2026</div>
+          <h3>Về chung một nhà</h3>
+          <p style="margin-bottom: 20px;">
+  Sau hành trình dài của yêu thương, chờ đợi và thấu hiểu,
+  chúng mình quyết định cùng nhau bước sang một chương mới của cuộc đời.
+</p>
+
+<p style="margin-bottom: 20px;">
+  Không còn là những cuộc gọi qua màn hình,
+  không còn là những lần tạm biệt sau mỗi cuộc gặp ngắn ngủi,
+  mà từ nay sẽ là những ngày tháng bình yên có nhau trong mọi khoảnh khắc.
+</p>
+
+<p>
+  Từ tình yêu của những năm tháng thanh xuân,
+  chúng mình chọn trở thành gia đình,
+  cùng nhau vun đắp một mái ấm nhỏ
+  và viết tiếp câu chuyện hạnh phúc bằng tất cả sự chân thành và yêu thương.
+</p>
+        </div>
+        <div class="dot"></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== EVENTS ===== -->
+<section class="events reveal">
+  <div class="container">
+    <span class="section-label">Sự kiện</span>
+    <h2 class="section-title">Khi nào &amp; Ở đâu</h2>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/>
+        </svg>
+        <h3>Lễ Vu Quy</h3>
+        <div class="who">Tư gia nhà gái</div>
+        <div class="time">10:15 — 21.06.2026</div>
+        <div class="date-vn">(Tức 07.05 Bính Ngọ)</div>
+        <div class="venue">
+          <strong>Tư gia Cô dâu</strong>
+          <div class="addr">Địa chỉ cũ: xóm 4, thôn Lê Lợi 2, Đông Xuân,Đông Hưng, Thái Bình</div>
+          <div class="addr">Địa chỉ mới: xóm 4, thôn Lê Lợi 2, Nam Đông Hưng, Hưng Yên</div>
+        </div>
+        <a href="https://maps.app.goo.gl/ursgWf94P4LqMZ348" target="_blank" rel="noopener" class="btn-link">
+          Xem bản đồ
+        </a>
+      </div>
+
+      <div class="event-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2v6m0 0a4 4 0 014 4v8H8v-8a4 4 0 014-4zM6 22h12M9 11h6"/>
+        </svg>
+        <h3>Tiệc Cưới</h3>
+        <div class="who">Trân trọng kính mời</div>
+        <div class="time">11.00 — 21.06.2026</div>
+        <div class="date-vn">(Tức 07.05 Bính Ngọ)</div>
+        <div class="venue">
+          <strong>Tư gia nhà trai</strong>
+          <div class="addr">Địa chỉ cũ: xóm 3, thôn Gia Lễ, xã Đông Mỹ, phường Trà Lý, Thái Bình</div>
+          <div class="addr">Địa chỉ mới: xóm 3, TDP Gia Lễ, phường Trà Lý, Hưng Yên</div>
+        </div>
+        <a href="https://maps.app.goo.gl/DXVeNGRvvA4g6uKq9" target="_blank" rel="noopener" class="btn-link">
+          Xem bản đồ
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery reveal">
+  <div class="container">
+    <span class="section-label">Khoảnh khắc</span>
+    <h2 class="section-title">Album của chúng tôi</h2>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="img"><img src="images/gallery/DSC_2009.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2065.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2539.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2887.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2930.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2941.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2951.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2968.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_2989.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3003.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3033.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3060.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3078.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3093.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3105.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3124.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3130.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3144.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3148.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3153.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3154.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3175.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3195.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3200.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3212.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3218.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3236.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3241.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3260.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3264.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3270.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3276.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3294.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3317.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3330.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3354.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3385.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3407.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3443.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+      <div class="img"><img src="images/gallery/DSC_3491.jpg" alt="Khoảnh khắc cưới" decoding="async"><div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RSVP ===== -->
+<section class="rsvp reveal">
+  <div class="container">
+    <h2 class="section-title">RSVP</h2>
+    <span class="section-label">Xác nhận tham dự</span>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+
+    <form class="rsvp-form" onsubmit="submitRsvp(event)">
+      <div class="form-row">
+        <label>Họ và tên *</label>
+        <input type="text" id="rsvpName" required placeholder="Tên của bạn">
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Bạn có tham dự?</label>
+          <select id="rsvpAttend">
+            <option value="yes">Có, tôi sẽ đến 🥂</option>
+            <option value="no">Tiếc quá, không thể đến</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Số người</label>
+          <select id="rsvpCount">
+            <option>1 người</option><option>2 người</option><option>3 người</option><option>4 người</option><option>CÙng cả gia đình</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Lời nhắn (tuỳ chọn)</label>
+        <textarea id="rsvpMsg" placeholder="Hãy gửi lời chúc của bạn nhé!"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Gửi xác nhận</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== GIFT ===== -->
+<section class="gift reveal">
+  <div class="container">
+    <!-- <span class="section-label">Mừng cưới</span> -->
+    <h2 class="section-title">Hộp mừng cưới</h2>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+    <p style="text-align:center; max-width:560px; margin: -1.5rem auto 3rem; color: var(--ink-soft); font-style: italic; font-family: 'Playfair Display', serif;">
+      Sự hiện diện của bạn là món quà quý giá nhất. Nếu phương xa, bạn có thể gửi lời chúc qua đây.
+    </p>
+
+    <div class="gift-grid">
+      <div class="gift-card">
+        <div class="who-label">Cô dâu</div>
+        <div class="who-name">Mai Em</div>
+        <div class="qr-box">
+          <img src="https://img.vietqr.io/image/970437-281704070009728-compact2.png" alt="QR cô dâu">
+        </div>
+        <div class="bank-info">
+          <strong>Hd bank</strong>
+          <div class="acc-num" onclick="copyText('281704070009728', this)">281704070009728</div>
+          <div class="copy-hint">Nhấn để sao chép</div>
+          <div style="margin-top:0.5rem;">Phạm Thị Mai</div>
+        </div>
+      </div>
+
+      <div class="gift-card">
+        <div class="who-label">Chú rể</div>
+        <div class="who-name">Tiến Toàn</div>
+        <div class="qr-box">
+         <img src="https://img.vietqr.io/image/970436-1031798376-compact2.png" alt="QR chú rể">
+        </div>
+        <div class="bank-info">
+          <strong>Vietcombank</strong>
+          <div class="acc-num" onclick="copyText('1031798376', this)">1031798376</div>
+          <div class="copy-hint">Nhấn để sao chép</div>
+          <div style="margin-top:0.5rem;">Khổng Tiến Toàn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WISHES ===== -->
+<section class="wishes reveal">
+  <div class="container">
+    <!-- <span class="section-label">Sổ lưu bút</span> -->
+    <h2 class="section-title">Lời chúc</h2>
+    <div class="section-ornament">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+
+    <form class="wish-form" onsubmit="addWish(event)">
+      <div class="wish-form-title">Gửi lời chúc tới hai bạn</div>
+      <div class="form-row">
+        <label>Tên của bạn</label>
+        <input type="text" id="wishName" required placeholder="Tên bạn">
+      </div>
+      <div class="form-row">
+        <label>Lời chúc</label>
+        <textarea id="wishMsg" required placeholder="Gửi tới hai bạn..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Gửi lời chúc</button>
+    </form>
+
+    <div class="wishes-list" id="wishesList">
+      <div class="wish-item"><div class="name">Linh Trang</div><div class="msg">Chúc hai bạn trăm năm hạnh phúc, sớm sinh quý tử! 🎉</div></div>
+      <div class="wish-item"><div class="name">Đức Anh</div><div class="msg">Mãi yêu nhau như ngày đầu nhé hai đứa! ❤️</div></div>
+      <div class="wish-item"><div class="name">Hồng Nhung</div><div class="msg">Wishing you a lifetime of love and laughter ✨</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THANK YOU MODAL (xác nhận RSVP) ===== -->
+<div id="thankModal" class="thank-modal" aria-hidden="true">
+  <div class="thank-card">
+    <svg class="thank-heart" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <h3 class="thank-title">Cảm ơn <span class="name" id="thankName">bạn</span>!</h3>
+    <div class="thank-divider">
+      <span class="line"></span><span class="dot"></span><span class="line"></span>
+    </div>
+    <p class="thank-msg">Phản hồi của bạn đã được ghi nhận.<br>Hẹn gặp bạn trong ngày trọng đại của chúng tôi.</p>
+    <button class="thank-close" onclick="closeThankModal()">Đóng</button>
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Đóng">✕</button>
+  <button class="lb-prev"  aria-label="Ảnh trước">‹</button>
+  <button class="lb-next"  aria-label="Ảnh sau">›</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lb-counter"><span id="lbIdx">1</span> / <span id="lbTotal">1</span></div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="thanks">Thank You</div>
+  <div class="names">— Mai Em &amp; Tiến Toàn —</div>
+  <div class="heart-line">Made with love</div>
+</footer>
+
+<script>
+  // ===== ENVELOPE =====
+  function openInvite() {
+    // Bắt đầu từ đỉnh trang để user thấy Hero "Save the Date" trước
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.getElementById('envelope').classList.add('opened');
+    document.body.style.overflow = 'auto';
+    // try autoplay music after user gesture (queue if YT not ready yet)
+    if (typeof playBgMusic === 'function') playBgMusic();
+    // Start auto-scroll sau 2.5s (cho user kịp xem hero "Save the Date")
+    setTimeout(function () {
+      if (typeof autoScroll !== 'undefined' && !autoScroll.userWants) autoScroll.enable();
+    }, 2500);
+  }
+  document.body.style.overflow = 'hidden';
+
+  // Personalized guest name from ?to=...
+  const params = new URLSearchParams(window.location.search);
+  const to = params.get('to');
+  if (to) {
+    document.getElementById('guestName').textContent = decodeURIComponent(to.replace(/-/g, ' '));
+  }
+
+  // ===== AUTO-SCROLL — chạy xuyên trang, tự resume sau khi user nghỉ =====
+  var autoScroll = {
+    userWants: false,      // user có muốn auto-scroll không (state sticky của nút)
+    running: false,        // có đang animate ngay lúc này không
+    speed: 2.0,            // px / frame ≈ 156px/s @ 60fps
+    rafId: null,
+    pauseTimer: null,
+    resumeDelay: 2500,     // ms idle trước khi tự chạy lại sau khi user vuốt
+    btn: null,
+    hint: null,
+    init() {
+      this.btn  = document.getElementById('autoScrollBtn');
+      this.hint = document.getElementById('autoScrollHint');
+    },
+    step() {
+      if (!this.running) return;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var cur = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (cur >= max - 2) { this.finish(); return; }
+      // scrollTo cho compatibility tốt hơn trên mobile (iOS Safari)
+      window.scrollTo(0, cur + this.speed);
+      this.rafId = requestAnimationFrame(this.step.bind(this));
+    },
+    startRunning() {
+      if (this.running) return;
+      this.running = true;
+      this.step();
+    },
+    stopRunning() {
+      this.running = false;
+      if (this.rafId) cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    },
+    enable() {
+      this.userWants = true;
+      this.btn.classList.add('on');
+      this.hint.classList.add('show');
+      var self = this;
+      setTimeout(function () { self.hint.classList.remove('show'); }, 3500);
+      this.startRunning();
+    },
+    disable() {
+      this.userWants = false;
+      this.btn.classList.remove('on');
+      this.stopRunning();
+      clearTimeout(this.pauseTimer);
+    },
+    finish() {            // tới cuối trang → tắt hẳn
+      this.disable();
+    },
+    toggle() { this.userWants ? this.disable() : this.enable(); },
+    // User vuốt → pause tạm thời, queue resume sau idle
+    onUserInteract() {
+      if (!this.userWants) return;
+      this.stopRunning();
+      clearTimeout(this.pauseTimer);
+      var self = this;
+      this.pauseTimer = setTimeout(function () {
+        if (self.userWants) self.startRunning();
+      }, this.resumeDelay);
+    }
+  };
+  function toggleAutoScroll() { autoScroll.toggle(); }
+  autoScroll.init();
+
+  // User vuốt / scroll / dùng phím → pause + auto-resume sau idle
+  var onInteract = function () { autoScroll.onUserInteract(); };
+  window.addEventListener('wheel',     onInteract, { passive: true });
+  window.addEventListener('touchmove', onInteract, { passive: true });
+  window.addEventListener('keydown', function (e) {
+    if (['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(e.key)) onInteract();
+  });
+
+  // ===== MUSIC (HTML5 audio — local MP3) =====
+  function playBgMusic() {
+    var audio = document.getElementById('bgm');
+    var btn = document.getElementById('musicBtn');
+    audio.volume = 0.4;
+    audio.play().then(function () {
+      btn.classList.add('playing');
+    }).catch(function (err) {
+      console.warn('Autoplay blocked, user can click music button to play', err);
+    });
+  }
+
+  function toggleMusic() {
+    var audio = document.getElementById('bgm');
+    var btn = document.getElementById('musicBtn');
+    if (audio.paused) {
+      audio.volume = 0.4;
+      audio.play().then(function () { btn.classList.add('playing'); }).catch(function () {});
+    } else {
+      audio.pause();
+      btn.classList.remove('playing');
+    }
+  }
+
+  // ===== PETALS =====
+  const petalsBox = document.getElementById('petals');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (8 + Math.random() * 10) + 's';
+    p.style.animationDelay = -Math.random() * 15 + 's';
+    p.style.transform = `scale(${0.6 + Math.random() * 0.8})`;
+    petalsBox.appendChild(p);
+  }
+
+  // ===== GLOBAL HEARTS — rơi đều cả trang =====
+  const heartsBox = document.getElementById('globalHearts');
+  const HEART_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+  for (let i = 0; i < 16; i++) {
+    const h = document.createElement('div');
+    h.className = 'heart-fall';
+    h.innerHTML = HEART_SVG;
+    const size = 12 + Math.random() * 18;       // 12-30px
+    h.style.width = size + 'px';
+    h.style.height = size + 'px';
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.animationDuration = (14 + Math.random() * 14) + 's';   // 14-28s
+    h.style.animationDelay = -Math.random() * 25 + 's';
+    h.style.opacity = (0.35 + Math.random() * 0.45).toFixed(2);    // 0.35-0.8
+    heartsBox.appendChild(h);
+  }
+
+  // ===== CALENDAR (lịch tháng có highlight ngày cưới) =====
+  (function buildCalendar() {
+    // Cấu hình ngày cưới — đổi 3 số này nếu muốn ngày khác
+    const calYear  = 2026;
+    const calMonth = 6;   // tháng dương (1-12)
+    const calDate  = 21;
+
+    const monthIdx = calMonth - 1;            // 0-indexed cho Date()
+    const firstDOW = new Date(calYear, monthIdx, 1).getDay();   // 0=CN
+    const startOffset = (firstDOW + 6) % 7;   // sang chuẩn Mon-first
+    const daysInMonth = new Date(calYear, monthIdx + 1, 0).getDate();
+
+    const monthEl = document.getElementById('calMonth');
+    const grid    = document.getElementById('calGrid');
+    if (!monthEl || !grid) return;
+
+    monthEl.textContent = `THÁNG ${calMonth} / ${calYear}`;
+
+    // Ô trống đầu tháng
+    for (let i = 0; i < startOffset; i++) {
+      const e = document.createElement('div');
+      e.className = 'cal-day empty';
+      grid.appendChild(e);
+    }
+    // Ô ngày
+    for (let d = 1; d <= daysInMonth; d++) {
+      const cell = document.createElement('div');
+      cell.className = 'cal-day' + (d === calDate ? ' highlight' : '');
+      cell.textContent = d;
+      grid.appendChild(cell);
+    }
+  })();
+
+  // ===== COUNTDOWN =====
+  const weddingDate = new Date('2026-06-21T10:00:00+07:00').getTime();
+  function tick() {
+    const diff = weddingDate - Date.now();
+    if (diff < 0) return;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cdDays').textContent = String(d).padStart(2,'0');
+    document.getElementById('cdHours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cdMins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cdSecs').textContent = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+
+  // ===== REVEAL ON SCROLL =====
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ===== GALLERY — lightbox (ảnh load sẵn toàn bộ, có animation float liên tục) =====
+  (function setupGallery() {
+    const items = Array.from(document.querySelectorAll('#galleryGrid .img'));
+    if (!items.length) return;
+
+    // ===== Lightbox =====
+    const lb     = document.getElementById('lightbox');
+    const lbImg  = document.getElementById('lightboxImg');
+    const lbIdx  = document.getElementById('lbIdx');
+    const lbTotal= document.getElementById('lbTotal');
+    const imgs   = items.map(it => it.querySelector('img'));
+    let cur = 0;
+    lbTotal.textContent = imgs.length;
+
+    function open(i) {
+      cur = (i + imgs.length) % imgs.length;
+      // Lightbox: load ảnh GỐC từ gallery-full/ (chất lượng đầy đủ)
+      var thumbSrc = imgs[cur].src;
+      lbImg.src = thumbSrc.replace('/gallery/', '/gallery-full/');
+      lbImg.alt = imgs[cur].alt;
+      lbIdx.textContent = cur + 1;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = 'auto';
+      lbImg.src = '';
+    }
+    function next() { open(cur + 1); }
+    function prev() { open(cur - 1); }
+
+    items.forEach((it, i) => it.addEventListener('click', () => open(i)));
+    document.querySelector('.lb-close').addEventListener('click', close);
+    document.querySelector('.lb-prev').addEventListener('click', prev);
+    document.querySelector('.lb-next').addEventListener('click', next);
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') next();
+      else if (e.key === 'ArrowLeft') prev();
+    });
+
+    // Swipe trên mobile
+    let tx = 0;
+    lb.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - tx;
+      if (Math.abs(dx) > 50) (dx < 0 ? next() : prev());
+    });
+  })();
+
+  // ===== RSVP + THANK YOU MODAL =====
+  function submitRsvp(e) {
+    e.preventDefault();
+    const name   = (document.getElementById('rsvpName').value || '').trim();
+    const attend = document.getElementById('rsvpAttend').value;
+    const count  = document.getElementById('rsvpCount').value;
+    const msg    = (document.getElementById('rsvpMsg').value || '').trim();
+    if (!name) return;
+
+    const btn  = e.target.querySelector('.btn-submit');
+    const orig = btn.textContent;
+    btn.textContent = 'Đang gửi...';
+    btn.disabled = true;
+
+    const done = () => {
+      btn.textContent = orig;
+      btn.disabled = false;
+      e.target.reset();
+      const friendlyMsg = attend === 'yes'
+        ? 'Phản hồi của bạn đã được ghi nhận.<br>Hẹn gặp bạn trong ngày trọng đại của chúng tôi 🥂'
+        : 'Phản hồi của bạn đã được ghi nhận.<br>Tiếc là không có bạn, nhưng vẫn cảm ơn rất nhiều ❤️';
+      showThankModal(name, friendlyMsg);
+    };
+
+    if (typeof WISHES_API !== 'undefined' && WISHES_API && !WISHES_API.includes('PASTE_')) {
+      fetch(WISHES_API, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ type: 'rsvp', name, attend, count, msg })
+      }).finally(done);
+    } else {
+      done();
+    }
+  }
+
+  function showThankModal(name, customMsg) {
+    document.getElementById('thankName').textContent = name || 'bạn';
+    var msgEl = document.querySelector('#thankModal .thank-msg');
+    if (msgEl) {
+      msgEl.innerHTML = customMsg ||
+        'Phản hồi của bạn đã được ghi nhận.<br>Hẹn gặp bạn trong ngày trọng đại của chúng tôi.';
+    }
+    var lb = document.getElementById('thankModal');
+    lb.classList.add('open');
+    lb.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeThankModal() {
+    var lb = document.getElementById('thankModal');
+    // Bỏ focus khỏi button trước khi set aria-hidden để tránh lỗi accessibility
+    if (document.activeElement && lb.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'auto';
+  }
+  // Click backdrop hoặc ESC để đóng
+  (function () {
+    var lb = document.getElementById('thankModal');
+    if (!lb) return;
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb) closeThankModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('open')) closeThankModal();
+    });
+  })();
+
+  // ===== COPY ACC =====
+  function copyText(text, el) {
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = el.nextElementSibling.textContent;
+      el.nextElementSibling.textContent = '✓ Đã sao chép';
+      setTimeout(() => { el.nextElementSibling.textContent = orig; }, 1500);
+    });
+  }
+
+  // ===== WISHES (Google Apps Script + Sheet — cần duyệt) =====
+  // ⬇️ THAY URL DƯỚI BẰNG URL Apps Script Web App của bạn sau khi deploy ⬇️
+  const WISHES_API = 'https://script.google.com/macros/s/AKfycbxlJxahMNH-5CfqnSkPXGYFegSyPIpo_F_6AQG5l2vu1OeQ__NvrMVUL_gvuulzACMo/exec';
+
+  function addWish(e) {
+    e.preventDefault();
+    const name = document.getElementById('wishName').value.trim();
+    const msg  = document.getElementById('wishMsg').value.trim();
+    if (!name || !msg) return;
+
+    const btn  = e.target.querySelector('.btn-submit');
+    const orig = btn.textContent;
+    btn.textContent = 'Đang gửi...';
+    btn.disabled = true;
+
+    const done = () => {
+      btn.textContent = orig;
+      btn.disabled = false;
+      e.target.reset();
+      showThankModal(name, 'Lời chúc của bạn đã được gửi.<br>Sẽ hiển thị sau khi gia chủ duyệt ❤️');
+    };
+
+    if (WISHES_API && !WISHES_API.includes('PASTE_')) {
+      // Gửi POST tới Apps Script — mode no-cors để bỏ qua CORS preflight
+      fetch(WISHES_API, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ type: 'wish', name, msg })
+      }).finally(done);
+    } else {
+      // Chưa cấu hình API — chỉ chạy local preview
+      done();
+    }
+  }
+
+  // Format thời gian: "21/05/2026 • 14:30"
+  function formatWishTime(t) {
+    if (!t) return '';
+    const d = new Date(t);
+    if (isNaN(d.getTime())) return '';
+    const pad = n => String(n).padStart(2, '0');
+    return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} • ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  }
+
+  // Tự fetch lời chúc đã duyệt từ Sheet và render
+  // Polling mỗi 15s — tự cập nhật khi gia chủ duyệt mới, không cần reload trang
+  let lastWishesHash = '';
+  async function loadWishes() {
+    if (!WISHES_API || WISHES_API.includes('PASTE_')) return;
+    try {
+      const res = await fetch(WISHES_API);
+      const data = await res.json();
+      const hash = JSON.stringify(data.wishes || []);
+      if (hash === lastWishesHash) return; // không thay đổi → skip render, đỡ flicker
+      lastWishesHash = hash;
+
+      const list = document.getElementById('wishesList');
+      if (!list) return;
+      list.innerHTML = '';
+      if (data.wishes && data.wishes.length) {
+        data.wishes.forEach((w, i) => {
+          const item = document.createElement('div');
+          item.className = 'wish-item';
+          item.style.animation = `wishFadeIn 0.5s ease ${i * 60}ms both`;
+          const n = document.createElement('div');
+          n.className = 'name';
+          n.textContent = w.name;
+          const m = document.createElement('div');
+          m.className = 'msg';
+          m.textContent = w.msg;
+          item.appendChild(n);
+          item.appendChild(m);
+          const t = formatWishTime(w.time);
+          if (t) {
+            const timeEl = document.createElement('div');
+            timeEl.className = 'time';
+            timeEl.textContent = t;
+            item.appendChild(timeEl);
+          }
+          list.appendChild(item);
+        });
+      } else {
+        list.innerHTML = '<div class="wish-item" style="text-align:center;border-left:none;opacity:0.65;"><div class="msg">Chưa có lời chúc nào. Bạn hãy là người đầu tiên gửi nhé ❤️</div></div>';
+      }
+    } catch (err) {
+      console.warn('Không tải được lời chúc:', err);
+    }
+  }
+  loadWishes();
+  setInterval(loadWishes, 5000); // auto-refresh mỗi 5 giây
+</script>
+</body>
+</html>
