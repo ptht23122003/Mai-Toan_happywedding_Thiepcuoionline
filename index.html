@@ -1704,14 +1704,29 @@
     .couple-divider { font-size: 3.5rem; }
     .couple-card .photo-frame { width: 250px; height: 335px; border-width: 8px; }
     .events-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .gallery-grid { columns: 3; column-gap: 0.5rem; }
+    /* Mobile: dùng CSS Grid chuẩn thay cho columns (reliable hơn trên iOS cũ) */
+    .gallery-grid {
+      columns: unset !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 0.5rem !important;
+    }
     .gallery-grid .img {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0 !important;
+      break-inside: unset !important;
+      aspect-ratio: 2 / 3;
       /* Tắt animation + will-change để giảm GPU memory pressure trên mobile */
       animation: none !important;
       will-change: auto !important;
     }
+    .gallery-grid .img img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
     .gallery-grid .img:hover { transform: none; }
+    /* Ẩn zoom-icon trên mobile (touch không có hover) */
+    .gallery-grid .img .zoom-icon { display: none; }
     .lightbox button { width: 44px; height: 44px; font-size: 1.4rem; }
     .lightbox .lb-close { top: 16px; right: 16px; }
     .lightbox .lb-prev  { left: 12px; }
@@ -1754,7 +1769,8 @@
     .hero .date-block .num { font-size: 1.4rem; }
 
     section { padding: 3.2rem 1rem; }
-    .gallery-grid { columns: 2; }
+    /* Giữ 2 cột trên màn rất nhỏ — gap nhỏ hơn */
+    .gallery-grid { gap: 0.35rem !important; }
   }
 
   /* ===== RESPONSIVE — LANDSCAPE PHONES / SHORT VIEWPORTS ===== */
