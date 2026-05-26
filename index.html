@@ -1755,7 +1755,7 @@
     .couple-divider { font-size: 3.5rem; }
     .couple-card .photo-frame { width: 250px; height: 335px; border-width: 8px; }
     .events-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    /* Mobile: Grid 2 cột chuẩn — aspect-ratio cố định, KHÔNG còn ô trống */
+    /* Mobile: Grid 2 cột với padding-top hack (chạy trên MỌI browser, kể cả Messenger WebView cũ) */
     .gallery-grid {
       columns: unset !important;
       display: grid !important;
@@ -1763,13 +1763,19 @@
       gap: 0.5rem !important;
     }
     .gallery-grid .img {
+      position: relative !important;
+      padding-top: 150% !important;     /* 2:3 aspect ratio (3/2 = 1.5 = 150%) */
+      height: 0 !important;
       margin-bottom: 0 !important;
       break-inside: unset !important;
-      aspect-ratio: 2 / 3;
       animation: none !important;
       will-change: auto !important;
+      overflow: hidden !important;
     }
     .gallery-grid .img img {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
