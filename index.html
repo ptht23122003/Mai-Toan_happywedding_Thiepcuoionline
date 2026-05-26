@@ -1997,9 +1997,9 @@
     <div class="date-block">
       <div><div class="num">21</div><div class="lbl">Chủ Nhật</div></div>
       <div class="sep"></div>
-      <div><div class="num">Tháng 6</div><div class="lbl">&&&</div></div>
+      <div><div class="num">Tháng 6</div><div class="lbl">Nhà gái 10.15 A.M</div></div>
       <div class="sep"></div>
-      <div><div class="num">2026</div><div class="lbl">10.00 Sáng</div></div>
+      <div><div class="num">2026</div><div class="lbl">Nhà trai 11.00 A.M</div></div>
     </div>
   </div>
   <div class="scroll-hint">Bất ngờ ở phía dưới nhé ! </div>
@@ -2683,9 +2683,14 @@
 
     function open(i) {
       cur = (i + imgs.length) % imgs.length;
-      // Lightbox: load ảnh GỐC từ gallery-full/ (chất lượng đầy đủ)
       var thumbSrc = imgs[cur].src;
-      lbImg.src = thumbSrc.replace('/gallery/', '/gallery-full/');
+      var fullSrc = thumbSrc.replace('/gallery/', '/gallery-full/');
+      // Thử load ảnh full trước, fallback về thumbnail nếu full bị lỗi (503/404)
+      lbImg.onerror = function () {
+        lbImg.onerror = null;
+        lbImg.src = thumbSrc;
+      };
+      lbImg.src = fullSrc;
       lbImg.alt = imgs[cur].alt;
       lbIdx.textContent = cur + 1;
       lb.classList.add('open');
