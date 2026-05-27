@@ -2449,10 +2449,7 @@
     document.body.style.overflow = 'auto';
     // try autoplay music after user gesture (queue if YT not ready yet)
     if (typeof playBgMusic === 'function') playBgMusic();
-    // Start auto-scroll sau 2.5s (cho user kịp xem hero "Save the Date")
-    setTimeout(function () {
-      if (typeof autoScroll !== 'undefined' && !autoScroll.userWants) autoScroll.enable();
-    }, 2500);
+    // Auto-scroll đã TẮT (gây lag) — user tự scroll bằng tay
   }
   document.body.style.overflow = 'hidden';
 
