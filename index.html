@@ -2446,8 +2446,8 @@
 <!-- ===== LIGHTBOX ===== -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <button class="lb-close" aria-label="Đóng">✕</button>
-  <!-- <button class="lb-prev"  aria-label="Ảnh trước">‹</button>
-  <button class="lb-next"  aria-label="Ảnh sau">›</button> -->
+  <button class="lb-prev"  aria-label="Ảnh trước">‹</button>
+  <button class="lb-next"  aria-label="Ảnh sau">›</button>
   <img id="lightboxImg" src="" alt="">
   <div class="lb-counter"><span id="lbIdx">1</span> / <span id="lbTotal">1</span></div>
 </div>
@@ -2721,9 +2721,13 @@
     function prev() { open(cur - 1); }
 
     items.forEach((it, i) => it.addEventListener('click', () => open(i)));
-    document.querySelector('.lb-close').addEventListener('click', close);
-    document.querySelector('.lb-prev').addEventListener('click', prev);
-    document.querySelector('.lb-next').addEventListener('click', next);
+    // Null-check để JS không crash nếu nút bị xoá/comment
+    var btnClose = document.querySelector('.lb-close');
+    var btnPrev  = document.querySelector('.lb-prev');
+    var btnNext  = document.querySelector('.lb-next');
+    if (btnClose) btnClose.addEventListener('click', close);
+    if (btnPrev)  btnPrev.addEventListener('click', prev);
+    if (btnNext)  btnNext.addEventListener('click', next);
     lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
     document.addEventListener('keydown', (e) => {
       if (!lb.classList.contains('open')) return;
