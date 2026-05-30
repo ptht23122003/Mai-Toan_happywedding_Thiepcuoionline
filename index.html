@@ -187,10 +187,11 @@
   /* ===== ENVELOPE COVER (photo-dominant style) ===== */
   .cover-photo {
     position: relative;
-    margin: 0 0 1.6rem;
+    margin: 0 0 1.2rem;
     border-radius: 6px;
     overflow: hidden;
     aspect-ratio: 3 / 4;
+    max-height: 62vh;          /* không vượt quá 62% chiều cao viewport */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   }
   .cover-photo img {
@@ -245,18 +246,18 @@
   }
   .cover-caption .caption-wedding {
     font-family: 'Allura', 'Great Vibes', cursive;
-    font-size: 3.6rem;
+    font-size: 3rem;
     color: white;
     line-height: 0.85;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55), 0 0 4px rgba(0, 0, 0, 0.3);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     letter-spacing: 0.01em;
   }
   .cover-caption .caption-names {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: white;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
     font-weight: 400;
   }
@@ -356,10 +357,10 @@
     position: relative;
     background:
       radial-gradient(ellipse at top, #fdfaf3 0%, #f5ecd9 100%);
-    padding: 1.2rem 1.2rem 1.8rem;
+    padding: 1rem 1rem 1.4rem;
     text-align: center;
-    max-width: 520px;
-    width: 92%;
+    max-width: 400px;
+    width: 90%;
     margin: auto;
     box-shadow:
       0 0 0 1px rgba(201, 169, 97, 0.6),
