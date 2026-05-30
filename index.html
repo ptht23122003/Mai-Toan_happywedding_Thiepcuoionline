@@ -145,8 +145,8 @@
   /* Card entrance + gentle float */
   .envelope-card {
     animation:
-      cardIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 3s both,    /* delay 3s rồi nổi lên */
-      cardFloat 6s ease-in-out infinite 4.4s;                /* float bắt đầu sau khi cardIn xong */
+      cardIn 3s cubic-bezier(0.22, 1, 0.36, 1) 1s both,      /* delay 1s, nổi lên CHẬM 3s */
+      cardFloat 6s ease-in-out infinite 4s;                   /* float bắt đầu sau khi cardIn xong */
   }
   @keyframes cardIn {
     0%   { opacity: 0; transform: translateY(60px) scale(0.88); filter: blur(8px); }
