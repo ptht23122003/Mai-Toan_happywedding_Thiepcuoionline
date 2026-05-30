@@ -1068,6 +1068,90 @@
   }
   .timeline-item p { font-size: 0.92rem; color: var(--ink-soft); }
 
+  /* ===== STORY (Chuyện tình yêu — magazine style với ảnh per entry) ===== */
+  .story-quote {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: -1.5rem auto 2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .story-line {
+    position: relative;
+    max-width: 580px;
+    margin: 0 auto;
+    padding-left: 36px;
+  }
+  .story-line::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 8px; bottom: 0;
+    width: 1.5px;
+    background: linear-gradient(to bottom, var(--gold) 0%, var(--gold) 92%, transparent);
+  }
+  .story-item {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  .story-item:last-child { margin-bottom: 0; }
+  .story-dot {
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 14px; height: 14px;
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--cream);
+  }
+  .story-date {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+  .story-item h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--ink);
+    font-size: 1.25rem;
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .story-item .story-text {
+    color: var(--ink-soft);
+    line-height: 1.75;
+    font-size: 0.93rem;
+    margin-bottom: 1.2rem;
+  }
+  .story-photo {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(58, 46, 42, 0.15);
+    background: var(--cream);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  .story-photo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(58, 46, 42, 0.22);
+  }
+  .story-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 480px) {
+    .story-line { padding-left: 28px; }
+    .story-dot { left: -27px; width: 12px; height: 12px; }
+    .story-item h3 { font-size: 1.1rem; }
+  }
+
   /* ===== EVENTS ===== */
   .events-grid {
     display: grid;
@@ -2184,79 +2268,63 @@
 <!-- ===== STORY ===== -->
 <section class="story reveal">
   <div class="container">
-    <h2 class="section-title">Our Story</h2>
-    <span class="section-label">Hành trình của chúng tôi</span>
+    <h2 class="section-title">Chuyện tình yêu</h2>
+    <p class="story-quote">"Tình yêu không chỉ là một danh từ — nó là một động từ; nó còn hơn cả một cảm giác — đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh."</p>
     <div class="section-ornament">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="content">
-          <div class="year">2022</div>
-          <h3>Lần đầu gặp gỡ</h3>
-          <p>Một cuộc gặp gỡ tình cờ đã bắt đầu cho câu chuyện của chúng mình. Từ những cuộc trò chuyện giản dị, hai trái tim dần trở nên thân thuộc lúc nào không hay.</p>
-        </div>
-        <div class="dot"></div>
-        <div></div>
-      </div>
-
-      <div class="timeline-item">
-        <div></div>
-        <div class="dot"></div>
-        <div class="content">
-          <div class="year">2023</div>
-          <h3>Bắt đầu yêu xa</h3>
-          <p>Anh sang Đài Loan làm việc, chúng mình bắt đầu yêu nhau bằng những cuộc gọi mỗi ngày, bằng sự chờ đợi và những lần đếm ngược ngày gặp lại.</p>
+    <div class="story-line">
+      <div class="story-item">
+        <div class="story-dot"></div>
+        <div class="story-date">2022</div>
+        <h3>Lần đầu gặp gỡ</h3>
+        <p class="story-text">Một cuộc gặp gỡ tình cờ đã bắt đầu cho câu chuyện của chúng mình. Từ những cuộc trò chuyện giản dị, hai trái tim dần trở nên thân thuộc lúc nào không hay.</p>
+        <div class="story-photo">
+          <img src="images/gallery/DSC_2065.jpg" alt="Lần đầu gặp gỡ" loading="lazy">
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="content">
-          <div class="year">2024</div>
-          <h3>Cùng nhau trưởng thành</h3>
-          <p>Dù cách nhau bởi khoảng cách và múi giờ, chúng mình vẫn luôn chọn đồng hành cùng nhau, chia sẻ từng niềm vui nhỏ và cùng nhau đi qua những tháng ngày trưởng thành.</p>
-        </div>
-        <div class="dot"></div>
-        <div></div>
-      </div>
-
-      <div class="timeline-item">
-        <div></div>
-        <div class="dot"></div>
-        <div class="content">
-          <div class="year">2025</div>
-          <h3>Ngày trở về</h3>
-          <p>Sau những năm tháng yêu xa, anh trở về mang theo sự vững chãi và lời hứa về một tương lai chung. Chúng mình hiểu rằng, sau tất cả, điều hạnh phúc nhất chính là chưa từng buông tay nhau.</p>
+      <div class="story-item">
+        <div class="story-dot"></div>
+        <div class="story-date">2023</div>
+        <h3>Bắt đầu yêu xa</h3>
+        <p class="story-text">Anh sang Đài Loan làm việc, chúng mình bắt đầu yêu nhau bằng những cuộc gọi mỗi ngày, bằng sự chờ đợi và những lần đếm ngược ngày gặp lại.</p>
+        <div class="story-photo">
+          <img src="images/gallery/DSC_2539.jpg" alt="Bắt đầu yêu xa" loading="lazy">
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="content">
-          <div class="year">2026</div>
-          <h3>Về chung một nhà</h3>
-          <p style="margin-bottom: 20px;">
-  Sau hành trình dài của yêu thương, chờ đợi và thấu hiểu,
-  chúng mình quyết định cùng nhau bước sang một chương mới của cuộc đời.
-</p>
-
-<p style="margin-bottom: 20px;">
-  Không còn là những cuộc gọi qua màn hình,
-  không còn là những lần tạm biệt sau mỗi cuộc gặp ngắn ngủi,
-  mà từ nay sẽ là những ngày tháng bình yên có nhau trong mọi khoảnh khắc.
-</p>
-
-<p>
-  Từ tình yêu của những năm tháng thanh xuân,
-  chúng mình chọn trở thành gia đình,
-  cùng nhau vun đắp một mái ấm nhỏ
-  và viết tiếp câu chuyện hạnh phúc bằng tất cả sự chân thành và yêu thương.
-</p>
+      <div class="story-item">
+        <div class="story-dot"></div>
+        <div class="story-date">2024</div>
+        <h3>Cùng nhau trưởng thành</h3>
+        <p class="story-text">Dù cách nhau bởi khoảng cách và múi giờ, chúng mình vẫn luôn chọn đồng hành cùng nhau, chia sẻ từng niềm vui nhỏ và cùng nhau đi qua những tháng ngày trưởng thành.</p>
+        <div class="story-photo">
+          <img src="images/gallery/DSC_3033.jpg" alt="Cùng nhau trưởng thành" loading="lazy">
         </div>
-        <div class="dot"></div>
-        <div></div>
+      </div>
+
+      <div class="story-item">
+        <div class="story-dot"></div>
+        <div class="story-date">2025</div>
+        <h3>Ngày trở về</h3>
+        <p class="story-text">Sau những năm tháng yêu xa, anh trở về mang theo sự vững chãi và lời hứa về một tương lai chung. Chúng mình hiểu rằng, sau tất cả, điều hạnh phúc nhất chính là chưa từng buông tay nhau.</p>
+        <div class="story-photo">
+          <img src="images/gallery/DSC_3218.jpg" alt="Ngày trở về" loading="lazy">
+        </div>
+      </div>
+
+      <div class="story-item">
+        <div class="story-dot"></div>
+        <div class="story-date">2026</div>
+        <h3>Về chung một nhà</h3>
+        <p class="story-text">Sau hành trình dài của yêu thương, chờ đợi và thấu hiểu, chúng mình quyết định cùng nhau bước sang một chương mới của cuộc đời.</p>
+        <p class="story-text">Không còn là những cuộc gọi qua màn hình, không còn là những lần tạm biệt sau mỗi cuộc gặp ngắn ngủi, mà từ nay sẽ là những ngày tháng bình yên có nhau trong mọi khoảnh khắc.</p>
+        <p class="story-text">Từ tình yêu của những năm tháng thanh xuân, chúng mình chọn trở thành gia đình, cùng nhau vun đắp một mái ấm nhỏ và viết tiếp câu chuyện hạnh phúc bằng tất cả sự chân thành và yêu thương.</p>
+        <div class="story-photo">
+          <img src="images/gallery/DSC_3270.jpg" alt="Về chung một nhà" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
