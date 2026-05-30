@@ -1076,9 +1076,9 @@
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: var(--ink-soft);
-    max-width: 580px;
-    margin: -1.5rem auto 2rem;
-    font-size: 1rem;
+    max-width: 540px;
+    margin: 1.5rem auto 2rem;     /* không còn overlap title */
+    font-size: 0.82rem;            /* nhỏ hơn — tiêu đề "Chuyện tình yêu" mới nổi bật */
     line-height: 1.7;
   }
   .story-line {
@@ -1980,6 +1980,14 @@
     }
     .couple-card .name { font-size: 2.4rem; }
     .couple-card .bio { font-size: 0.85rem; line-height: 1.6; }
+
+    /* Story quote — nhỏ hơn trên mobile + không overlap với title */
+    .story-quote {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      margin: 1rem auto 1.5rem;
+      padding: 0 0.5rem;
+    }
 
     /* Event venue addresses — compact trên mobile, giảm chiếm chỗ */
     .event-card .venue {
