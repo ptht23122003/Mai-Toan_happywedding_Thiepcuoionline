@@ -187,12 +187,13 @@
   /* ===== ENVELOPE COVER (photo-dominant style) ===== */
   .cover-photo {
     position: relative;
+    width: 100%;                /* chiếm full chiều rộng card */
     margin: 0 0 1.2rem;
     border-radius: 6px;
     overflow: hidden;
     aspect-ratio: 3 / 4;
-    max-height: 62vh;          /* không vượt quá 62% chiều cao viewport */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    box-sizing: border-box;
   }
   .cover-photo img {
     width: 100%;
