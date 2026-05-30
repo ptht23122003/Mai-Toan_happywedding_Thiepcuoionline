@@ -1196,7 +1196,70 @@
   .event-card .date-vn {
     font-size: 0.85rem;
     color: var(--ink-soft);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Khối "Thời gian dự tiệc" — 2 buổi (tối hôm trước + sáng hôm sau) */
+  .event-card .party-times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0 0 1.2rem;
+  }
+  .event-card .party-time {
+    background: linear-gradient(135deg, #fdf5f7 0%, #f8e5ec 100%);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .event-card .party-time:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(201, 169, 97, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  }
+  .event-card .party-time .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .event-card .party-time .label svg {
+    width: 11px; height: 11px;
+  }
+  .event-card .party-time .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--ink);
+    line-height: 1.2;
+    flex-wrap: wrap;
+  }
+  .event-card .party-time .info .dow {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--rose);
+  }
+  .event-card .party-time .info .date {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .event-card .party-time .info .hour {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rose);
+  }
+  .event-card .party-time .info .sep {
+    color: var(--gold);
+    font-size: 0.7rem;
   }
   .event-card .venue {
     padding: 1.25rem;
@@ -2220,7 +2283,7 @@
 <!-- ===== EVENTS ===== -->
 <section class="events reveal">
   <div class="container">
-    <h2 class="section-title">Thời gian & Địa điểm</h2>
+    <h2 class="section-title">Lịch trình tổ chức</h2>
     <div class="section-ornament">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
     </div>
@@ -2230,9 +2293,36 @@
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/>
         </svg>
-        <h3>Lễ Vu Quy</h3>
-        <div class="who">Tư gia nhà gái</div>
-        <div class="time">10:15 — 21.06.2026</div>
+        <h3>Nhà gái</h3>
+        <div class="who">Lễ vu quy</div>
+        <div class="party-times">
+          <div class="party-time">
+            <div class="label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              Tiệc tối
+            </div>
+            <div class="info">
+              <span class="dow">Thứ Bảy</span>
+              <span class="sep">•</span>
+              <span class="date">20.06.2026</span>
+              <span class="sep">•</span>
+              <span class="hour">18:00</span>
+            </div>
+          </div>
+          <div class="party-time">
+            <div class="label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              Lễ Vu Quy
+            </div>
+            <div class="info">
+              <span class="dow">Chủ Nhật</span>
+              <span class="sep">•</span>
+              <span class="date">21.06.2026</span>
+              <span class="sep">•</span>
+              <span class="hour">10:15</span>
+            </div>
+          </div>
+        </div>
         <div class="date-vn">(Tức 07.05 Bính Ngọ)</div>
         <div class="venue">
           <strong>Tư gia Cô dâu</strong>
@@ -2248,12 +2338,39 @@
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M12 2v6m0 0a4 4 0 014 4v8H8v-8a4 4 0 014-4zM6 22h12M9 11h6"/>
         </svg>
-        <h3>Tiệc Cưới</h3>
-        <div class="who">Trân trọng kính mời</div>
-        <div class="time">11.00 — 21.06.2026</div>
+        <h3>Nhà trai</h3>
+        <div class="who">Tiệc thành hôn</div>
+        <div class="party-times">
+          <div class="party-time">
+            <div class="label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              Tiệc tối
+            </div>
+            <div class="info">
+              <span class="dow">Thứ Bảy</span>
+              <span class="sep">•</span>
+              <span class="date">20.06.2026</span>
+              <span class="sep">•</span>
+              <span class="hour">17:30</span>
+            </div>
+          </div>
+          <div class="party-time">
+            <div class="label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              Tiệc cưới
+            </div>
+            <div class="info">
+              <span class="dow">Chủ Nhật</span>
+              <span class="sep">•</span>
+              <span class="date">21.06.2026</span>
+              <span class="sep">•</span>
+              <span class="hour">11:00</span>
+            </div>
+          </div>
+        </div>
         <div class="date-vn">(Tức 07.05 Bính Ngọ)</div>
         <div class="venue">
-          <strong>Tư gia nhà trai</strong>
+          <strong>Tư gia chú rể</strong>
           <div class="addr">Địa chỉ cũ: xóm 3, thôn Gia Lễ, xã Đông Mỹ, phường Trà Lý, Thái Bình</div>
           <div class="addr">Địa chỉ mới: xóm 3, TDP Gia Lễ, phường Trà Lý, Hưng Yên</div>
         </div>
