@@ -75,14 +75,7 @@
     overflow-y: auto;
     padding: 2rem 1rem;
   }
-  /* Damask pattern overlay */
-  #envelope::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23c9a961' fill-opacity='0.5'%3E%3Cpath d='M60 20 Q50 35, 60 50 Q70 35, 60 20 Z M40 60 Q55 50, 70 60 Q55 70, 40 60 Z M60 70 Q50 85, 60 100 Q70 85, 60 70 Z M50 60 Q65 50, 80 60 Q65 70, 50 60 Z'/%3E%3Ccircle cx='60' cy='60' r='3'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='120' cy='120' r='2'/%3E%3Ccircle cx='0' cy='120' r='2'/%3E%3Ccircle cx='120' cy='0' r='2'/%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.28;
-    pointer-events: none;
-  }
+  /* Damask pattern overlay — đã tắt */
   /* Sparkles (small twinkling stars) */
   .sparkle-layer { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
   .sparkle {
