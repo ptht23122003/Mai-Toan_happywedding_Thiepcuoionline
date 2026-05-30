@@ -75,7 +75,8 @@
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; gap: 2rem;
     transition: opacity 1s ease, transform 1.2s ease;
-    overflow: hidden;
+    overflow-y: auto;            /* cho phép scroll nếu card cao hơn viewport */
+    padding: 2rem 1rem;
   }
   /* Damask pattern overlay */
   #envelope::before {
@@ -355,10 +356,11 @@
     position: relative;
     background:
       radial-gradient(ellipse at top, #fdfaf3 0%, #f5ecd9 100%);
-    padding: 1rem 1rem 1.6rem;
+    padding: 1.2rem 1.2rem 1.8rem;
     text-align: center;
-    max-width: 380px;
-    width: 90%;
+    max-width: 520px;
+    width: 92%;
+    margin: auto;
     box-shadow:
       0 0 0 1px rgba(201, 169, 97, 0.6),
       0 0 0 8px var(--cream),
@@ -2108,7 +2110,7 @@
   <div class="envelope-card">
     <!-- Cover photo dominant với "LOVE STORY" badge + "Wedding" overlay -->
     <div class="cover-photo">
-      <img src="images/gallery/DSC_3270.jpg" alt="Mai Em & Tiến Toàn" loading="eager">
+      <img src="images/gallery-full/DSC_3443.jpg" alt="Mai Em & Tiến Toàn" loading="eager">
       <div class="cover-badge">
         <span class="badge-small">LOVE</span>
         <span class="badge-big">STORY</span>
