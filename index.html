@@ -187,18 +187,20 @@
   /* ===== ENVELOPE COVER (photo-dominant style) ===== */
   .cover-photo {
     position: relative;
-    width: 100%;                /* chiếm full chiều rộng card */
+    width: 100%;
     margin: 0 0 1.2rem;
     border-radius: 6px;
     overflow: hidden;
     aspect-ratio: 3 / 4;
+    max-height: 58vh;          /* cap chiều cao theo viewport — không bị tràn */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     box-sizing: border-box;
   }
   .cover-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;          /* crop ảnh thừa nếu height bị cap */
+    object-position: center top; /* ưu tiên giữ phần trên (mặt cô dâu chú rể) */
     display: block;
     transition: transform 8s ease-in-out;
   }
