@@ -818,9 +818,11 @@
     margin: 0;
   }
   @media (max-width: 768px) {
-    /* Mobile: zone shrink match aspect thật của ảnh (5669×3780 landscape, H/W = 0.667) */
+    /* Mobile: bỏ min-height 100vh → hero co theo content, không còn space trắng dư */
     .hero {
-      grid-template-rows: calc(100vw * 3780 / 5669) auto;   /* row1 ≈ 66.7vw đúng aspect */
+      min-height: auto;
+      grid-template-rows: calc(100vw * 3780 / 5669) auto;
+      padding-bottom: 3.5rem;            /* chừa chỗ cho scroll-hint phía dưới */
     }
     .hero::after {
       height: calc(100vw * 3780 / 5669);
@@ -828,6 +830,16 @@
     }
     .hero-quote { margin-top: 1.6rem; max-width: 100%; padding: 0 0.5rem; }
     .hero-quote .quote-text { font-size: 0.78rem; line-height: 1.6; }
+    /* Scroll-hint mobile: bỏ absolute → flow tự nhiên sau text */
+    .scroll-hint {
+      position: static;
+      transform: none;
+      left: auto;
+      bottom: auto;
+      margin: 1.4rem auto 0;
+      display: block;
+      width: fit-content;
+    }
   }
   .scroll-hint {
     position: absolute;
@@ -2840,10 +2852,8 @@
       <div class="info-family">
         <div class="family-side">NHÀ GÁI</div>
         <div class="family-row">Ông: <strong>PHẠM NGỌC SỸ</strong></div>
-        <div class="family-row">Bà: <strong>PHÍ THỊ KHUYÊN</strong></div>
       </div>
     </div>
-
     <div class="info-mid-orn">
       <span class="line short"></span>
       <span class="dot"></span>
