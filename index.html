@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title> Mai Em ❤ Tiến Toàn — Save the Date</title>
 <meta name="description" content="Thiệp mời cưới online — Mai Em & Tiến Toàn | 05.07.2026" />
 
@@ -1874,15 +1874,21 @@
   }
   /* ===== THANK YOU MODAL (RSVP confirm) ===== */
   .thank-modal {
-    position: fixed; inset: 0;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(20, 8, 8, 0.55);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 9999;
     display: none;
-    align-items: center; justify-content: center;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
-    animation: thankFadeIn 0.3s ease;
+    box-sizing: border-box;
+    animation: thankFadeIn 0.2s ease;
+    overflow-y: auto;
   }
   .thank-modal.open { display: flex; }
   @keyframes thankFadeIn {
@@ -2104,9 +2110,12 @@
     background: var(--cream);
     border-radius: 4px;
     font-family: inherit;
-    font-size: 0.78rem;
+    font-size: 16px;            /* ép 16px để iOS không auto-zoom khi focus */
     color: var(--ink);
     transition: border-color 0.3s;
+  }
+  @media (min-width: 769px) {
+    .form-row input, .form-row select, .form-row textarea { font-size: 0.78rem; }
   }
   .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
     outline: none;
@@ -3662,14 +3671,16 @@
     btn.textContent = 'Đang gửi...';
     btn.disabled = true;
 
+    // Show modal NGAY — không đợi fetch network
+    const friendlyMsg = attend === 'yes'
+      ? 'Phản hồi của bạn đã được ghi nhận.<br>Hẹn gặp bạn trong ngày trọng đại của chúng tôi 🥂'
+      : 'Phản hồi của bạn đã được ghi nhận.<br>Tiếc là không có bạn, nhưng vẫn cảm ơn rất nhiều ❤️';
+    showThankModal(name, friendlyMsg);
+    e.target.reset();
+
     const done = () => {
       btn.textContent = orig;
       btn.disabled = false;
-      e.target.reset();
-      const friendlyMsg = attend === 'yes'
-        ? 'Phản hồi của bạn đã được ghi nhận.<br>Hẹn gặp bạn trong ngày trọng đại của chúng tôi 🥂'
-        : 'Phản hồi của bạn đã được ghi nhận.<br>Tiếc là không có bạn, nhưng vẫn cảm ơn rất nhiều ❤️';
-      showThankModal(name, friendlyMsg);
     };
 
     if (typeof WISHES_API !== 'undefined' && WISHES_API && !WISHES_API.includes('PASTE_')) {
@@ -3742,11 +3753,13 @@
     btn.textContent = 'Đang gửi...';
     btn.disabled = true;
 
+    // Show modal NGAY — không đợi fetch network
+    showThankModal(name, 'Lời chúc của bạn đã được gửi.<br>Sẽ hiển thị sau khi gia chủ duyệt ❤️');
+    e.target.reset();
+
     const done = () => {
       btn.textContent = orig;
       btn.disabled = false;
-      e.target.reset();
-      showThankModal(name, 'Lời chúc của bạn đã được gửi.<br>Sẽ hiển thị sau khi gia chủ duyệt ❤️');
     };
 
     if (WISHES_API && !WISHES_API.includes('PASTE_')) {
